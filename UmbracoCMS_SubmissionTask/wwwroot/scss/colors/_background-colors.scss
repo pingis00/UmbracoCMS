@@ -1,0 +1,29 @@
+﻿.custom-bg-dark {
+    background-color: var(--color-dark);
+    color: var(--color-default);
+}
+
+.custom-bg-primary {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+}
+
+.custom-bg-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.custom-bg-accent {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.custom-bg-gray {
+    background-color: var(--color-gray);
+    color: var(--color-default);
+}
+
+.custom-bg-light {
+    background-color: var(--color-light);
+    color: var(--color-default);
+}

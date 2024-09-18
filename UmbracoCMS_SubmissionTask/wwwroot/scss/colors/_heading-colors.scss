@@ -1,0 +1,69 @@
+﻿@include heading-colors(
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-secondary)  
+);
+
+@include theme-headings(
+    'dark',
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-secondary)  
+);
+
+@include theme-headings(
+    'primary',
+    var(--color-light),
+    var(--color-light),
+    var(--color-secondary),
+    var(--color-light),
+    var(--color-light),
+    var(--color-secondary)
+);
+
+@include theme-headings(
+    'secondary',
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-accent),
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-accent)  
+);
+
+@include theme-headings(
+    'accent',
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-secondary)  
+);
+
+@include theme-headings(
+    'gray',
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-secondary)  
+);
+
+@include theme-headings(
+    'light',
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-secondary),
+    var(--color-primary),
+    var(--color-primary),
+    var(--color-secondary)  
+);
+

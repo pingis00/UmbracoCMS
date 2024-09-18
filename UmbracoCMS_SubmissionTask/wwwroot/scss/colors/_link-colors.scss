@@ -1,0 +1,40 @@
+﻿@include link-colors(
+    var(--color-secondary),
+    var(--color-primary)
+);
+
+@include theme-links(
+    'dark',
+    var(--color-secondary),
+    var(--color-accent)
+);
+
+@include theme-links(
+    'primary',
+    var(--color-light),
+    var(--color-secondary)
+);
+
+@include theme-links(
+    'secondary',
+    var(--color-light),
+    var(--color-light)
+);
+
+@include theme-links(
+    'accent',
+    var(--color-secondary),
+    var(--color-primary)
+);
+
+@include theme-links(
+    'gray',
+    var(--color-secondary),
+    var(--color-primary)
+);
+
+@include theme-links(
+    'light',
+    var(--color-primary),
+    var(--color-primary)
+);

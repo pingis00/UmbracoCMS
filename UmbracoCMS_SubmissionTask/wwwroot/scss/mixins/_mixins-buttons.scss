@@ -1,0 +1,89 @@
+﻿@mixin button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@mixin button-colors($bg-color, $text-color, $hover-bg-color, $hover-text-color, $border-color: null, $hover-border-color: null) {
+    background-color: $bg-color;
+    color: $text-color;
+    border-color: if($border-color, $border-color, $bg-color);
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover {
+        background-color: $hover-bg-color;
+        color: $hover-text-color;
+        border-color: if($hover-border-color, $hover-border-color, $hover-bg-color);
+    }
+
+    &:hover, &:focus, &:active {
+        outline: none !important;
+    }
+}
+
+@mixin theme-buttons($bg-color, $btn-dark-colors, $btn-primary-colors, $btn-secondary-colors, $btn-accent-colors, $btn-gray-colors, $btn-light-colors, $btn-menu-colors) {
+    .custom-bg-#{$bg-color} {
+        .custom-btn-dark {
+            @include button-colors($btn-dark-colors...);
+        }
+
+        .custom-btn-primary {
+            @include button-colors($btn-primary-colors...);
+        }
+
+        .custom-btn-secondary {
+            @include button-colors($btn-secondary-colors...);
+        }
+
+        .custom-btn-accent {
+            @include button-colors($btn-accent-colors...);
+        }
+
+        .custom-btn-gray {
+            @include button-colors($btn-gray-colors...);
+        }
+
+        .custom-btn-light {
+            @include button-colors($btn-light-colors...);
+        }
+
+        .custom-btn-menu {
+            @include button-colors($btn-menu-colors...)
+        }
+    }
+}
+
+@mixin btn {
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid;
+    padding: 15px 40px;
+    font-size: 16px;
+    transition: 0.25s;
+    text-decoration: none;
+    @include button;
+
+    &:hover {
+        transition: 0.25s;
+        text-decoration: none;
+    }
+}
+
+@mixin btn-circle {
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.25s;
+    text-decoration: none !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &:hover {
+        transition: 0.25s;
+        text-decoration: none;
+    }
+}

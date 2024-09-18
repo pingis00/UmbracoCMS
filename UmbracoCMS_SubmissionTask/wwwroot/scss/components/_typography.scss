@@ -1,0 +1,64 @@
+﻿h1, h2, h3, h4, h5, h6 {
+    @include heading;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 40px;
+
+    @include sm {
+        font-size: 58px;
+    }
+
+    @include xl {
+        font-size: 70px;
+    }
+}
+
+h2 {
+    font-size: 26px;
+
+    @include sm {
+        font-size: 32px;
+    }
+
+    @include xl {
+        font-size: 40px;
+    }
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 18px;
+    &.content-heading {
+        @include content-heading;
+    }
+}
+
+h6 {
+    font-size: 14px;
+}
+
+p {
+    @include text-regular;
+    margin: 0;
+    color: #535656;
+}
+
+.italic {
+    @include text-italic;
+}
+
+.custom-section-title {
+    @include section-name;
+    color: var(--color-secondary);
+}
