@@ -1077,9 +1077,9 @@ h6 {
   outline: none !important;
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  height: 55px;
-  width: 55px;
-  font-size: 1.6rem;
+  height: 45px;
+  width: 45px;
+  font-size: 1rem;
 }
 .custom-btn-menu:hover {
   transition: 0.25s;
@@ -1111,6 +1111,9 @@ a[target=_blank]::after {
   font-size: 0.8em;
   margin-left: 0.4em;
   margin-top: -0.9em;
+}
+a.no-external-icon[target=_blank]::after {
+  content: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1206,13 +1209,18 @@ p {
 }
 
 header {
-  padding: 10px 0;
+  padding: 20px 0;
 }
 header .container {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr auto;
   grid-template-areas: "logo mobile" "menu menu" "search search";
+}
+@media (min-width: 768px) {
+  header .container {
+    padding: 0;
+  }
 }
 @media (min-width: 768px) {
   header .container {
@@ -1267,6 +1275,7 @@ header .container #menu nav {
 }
 header .container #menu nav a {
   font-weight: 700;
+  font-size: 16px;
 }
 header .container #menu nav a:hover {
   color: var(--color-secondary);
@@ -1356,4 +1365,61 @@ header .container .hide {
 }
 .page-title .container .crumb li a {
   color: var(--color-primary);
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+@media (min-width: 576px) {
+  .top-bar .container {
+    padding: 10px 0;
+  }
+}
+.top-bar .container .address p {
+  font-size: 10px;
+  color: white;
+}
+@media (min-width: 576px) {
+  .top-bar .container .address p {
+    font-size: 13px;
+  }
+}
+.top-bar .container .social-media-links {
+  display: flex;
+  align-items: center;
+}
+.top-bar .container .social-media-links a {
+  padding: 10px;
+  margin: -10px 0;
+  border-left: 1px solid rgb(96, 105, 102);
+  border-right: 1px solid rgb(96, 105, 102);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+@media (min-width: 576px) {
+  .top-bar .container .social-media-links a {
+    padding: 15px;
+  }
+}
+.top-bar .container .social-media-links a:hover {
+  text-decoration: none;
+}
+.top-bar .container .social-media-links a i {
+  font-size: 10px;
+}
+@media (min-width: 576px) {
+  .top-bar .container .social-media-links a i {
+    font-size: 13px;
+  }
+}
+.top-bar .container .social-media-links a:first-child {
+  border-right: none;
+}
+.top-bar .container .social-media-links a:last-child {
+  border-left: none;
 }

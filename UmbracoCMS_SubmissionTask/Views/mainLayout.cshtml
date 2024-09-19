@@ -26,6 +26,7 @@
 
 <body>
     <div class="wrapper">
+        @await Html.PartialAsync("partials/static/topbar.cshtml")
         @await Html.PartialAsync("partials/static/header.cshtml")
         <main>
             @RenderBody()

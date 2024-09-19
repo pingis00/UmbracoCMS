@@ -20,5 +20,10 @@
             margin-top: -0.9em;
         }
     }
-}
 
+    &.no-external-icon[target="_blank"] {
+        &::after {
+            content: none;
+        }
+    }
+}
