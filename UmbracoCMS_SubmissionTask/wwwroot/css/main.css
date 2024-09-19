@@ -41,6 +41,17 @@ span {
   color: var(--color-primary);
 }
 
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 576px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 :root {
   --color-default: #535656;
   --color-dark: #171717;
@@ -1219,11 +1230,6 @@ header .container {
 }
 @media (min-width: 768px) {
   header .container {
-    padding: 0;
-  }
-}
-@media (min-width: 768px) {
-  header .container {
     grid-template-columns: 1fr auto auto;
     grid-template-areas: "logo search mobile" "menu menu menu";
   }
@@ -1308,6 +1314,7 @@ header .container .btn-mobileMenu {
   justify-self: end;
   cursor: pointer;
   border: none;
+  font-size: 24px;
 }
 @media (min-width: 576px) {
   header .container .btn-mobileMenu {
@@ -1367,16 +1374,13 @@ header .container .hide {
   color: var(--color-primary);
 }
 
+.top-bar {
+  padding: 10px 0;
+}
 .top-bar .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
-}
-@media (min-width: 576px) {
-  .top-bar .container {
-    padding: 10px 0;
-  }
 }
 .top-bar .container .address p {
   font-size: 10px;
@@ -1422,4 +1426,18 @@ header .container .hide {
 }
 .top-bar .container .social-media-links a:last-child {
   border-left: none;
+}
+
+footer {
+  padding: 0.8rem 0;
+}
+footer .container .footer-content p {
+  font-size: 12px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  footer .container .footer-content p {
+    font-size: 14px;
+    text-align: left;
+  }
 }
