@@ -33,8 +33,19 @@ span {
 }
 
 .custom-bg-secondary {
+
     span {
         color: var(--color-primary);
+    }
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include sm {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 

@@ -8,9 +8,6 @@
         grid-template-areas:
             "logo mobile" "menu menu" "search search";
 
-        @include md {
-            padding: 0;
-        }
 
         @include md {
             grid-template-columns: 1fr auto auto;
@@ -98,6 +95,7 @@
             justify-self: end;
             cursor: pointer;
             border: none;
+            font-size: 24px;
 
             @include sm {
                 font-size: 30px;
