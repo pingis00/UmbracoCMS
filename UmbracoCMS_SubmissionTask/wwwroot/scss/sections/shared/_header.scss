@@ -1,5 +1,5 @@
 ﻿header {
-    padding: 10px 0;
+    padding: 20px 0;
 
     .container {
         display: grid;
@@ -7,6 +7,10 @@
         grid-template-columns: 1fr auto;
         grid-template-areas:
             "logo mobile" "menu menu" "search search";
+
+        @include md {
+            padding: 0;
+        }
 
         @include md {
             grid-template-columns: 1fr auto auto;
@@ -58,6 +62,7 @@
 
                 a {
                     font-weight: 700;
+                    font-size: 16px;
 
                     &:hover {
                         color: var(--color-secondary);
