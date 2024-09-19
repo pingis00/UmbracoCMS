@@ -3,8 +3,14 @@
 @inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
 @{
     Layout = null;
-    var pageTitle = !string.IsNullOrEmpty(ViewBag.Title) ? $"{ViewBag.Title} | Kalle - Anka" : $"Kalle - Anka";
 
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+    var siteName = settings?.Value<string>("siteName") ?? "Onatrix";
+    var sitetagLine = settings?.Value<string>("sitetagLine") ?? "Financial Solutions";
+
+    var pageTitle = !string.IsNullOrEmpty(ViewBag.Title) ? $"{ViewBag.Title} | {siteName} - {sitetagLine}" : $"{siteName} - {sitetagLine}";
+    var isHomePage = Model?.Name == "Home";
 }
 
 <!DOCTYPE html>
@@ -20,6 +26,7 @@
 
 <body>
     <div class="wrapper">
+        @await Html.PartialAsync("partials/static/header.cshtml")
         <main>
             @RenderBody()
         </main>
