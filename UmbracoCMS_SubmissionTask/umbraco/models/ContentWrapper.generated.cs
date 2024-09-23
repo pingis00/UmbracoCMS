@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Paragraph</summary>
-	[PublishedModel("paragraph")]
-	public partial class Paragraph : PublishedElementModel
+	/// <summary>Content Wrapper</summary>
+	[PublishedModel("contentWrapper")]
+	public partial class ContentWrapper : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		public new const string ModelTypeAlias = "paragraph";
+		public new const string ModelTypeAlias = "contentWrapper";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -34,43 +34,19 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Paragraph, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<ContentWrapper, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public Paragraph(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public ContentWrapper(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
 		}
 
 		// properties
-
-		///<summary>
-		/// Paragraph Content
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("paragraphContent")]
-		public virtual string ParagraphContent => this.Value<string>(_publishedValueFallback, "paragraphContent");
-
-		///<summary>
-		/// Paragraph Font Style
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("paragraphFontStyle")]
-		public virtual string ParagraphFontStyle => this.Value<string>(_publishedValueFallback, "paragraphFontStyle");
-
-		///<summary>
-		/// Paragraph Font Weight
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("paragraphFontWeight")]
-		public virtual string ParagraphFontWeight => this.Value<string>(_publishedValueFallback, "paragraphFontWeight");
 	}
 }

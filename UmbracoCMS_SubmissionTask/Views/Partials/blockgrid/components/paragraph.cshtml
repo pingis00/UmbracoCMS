@@ -4,8 +4,30 @@
 
 @{
     var paragraphContent = Model?.Content.Value<string>("paragraphContent") ?? null;
+
+    var fontStyle = Model?.Content.Value<string[]>("paragraphFontStyle")?.FirstOrDefault() 
+                    ?? Model?.Content.Value<string>("paragraphFontStyle") 
+                    ?? "Normal";
+    var fontStyleClass = (fontStyle.Equals("Italic", StringComparison.OrdinalIgnoreCase)) ? "italic" : "normal";
+
+    var fontWeight = Model?.Content.Value<string[]>("paragraphFontWeight")?.FirstOrDefault()
+                    ?? Model?.Content.Value<string>("paragraphFontWeight")
+                    ?? "400 Normal";
+    var fontWeightClass = fontWeight.Split(' ')[0]
+    switch
+    {
+        "300" => "font-weight-300",
+        "400" => "font-weight-400",
+        "500" => "font-weight-500",
+        "600" => "font-weight-600",
+        "700" => "font-weight-700",
+        "800" => "font-weight-800",
+        _ => "font-weight-400"
+    };
 }
 
 @if (!string.IsNullOrEmpty(paragraphContent)) {
-    <p>@paragraphContent</p>
+    <p class="paragraph @fontStyleClass @fontWeightClass">
+        @paragraphContent
+    </p>
 }

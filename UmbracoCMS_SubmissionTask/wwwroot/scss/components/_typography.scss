@@ -1,64 +1,58 @@
 ﻿h1, h2, h3, h4, h5, h6 {
-    @include heading;
     margin-top: 0;
     margin-bottom: 0.5em;
     line-height: 1.2;
 }
 
 h1 {
-    font-size: 40px;
-
-    @include sm {
-        font-size: 58px;
-    }
-
-    @include xl {
-        font-size: 70px;
-    }
+    @include heading(40px, null, 58px, 70px, null);
 }
 
 h2 {
-    font-size: 26px;
-
-    @include sm {
-        font-size: 32px;
-    }
-
-    @include xl {
-        font-size: 40px;
-    }
+    @include heading(26px, 32px, null, 40px, null);
 }
 
 h3 {
-    font-size: 30px;
+    @include heading(30px);
 }
 
 h4 {
-    font-size: 22px;
+    @include heading(22px);
 }
 
 h5 {
-    font-size: 18px;
+    @include heading(18px);
+
     &.content-heading {
-        @include content-heading;
+        @include content-heading(18px);
     }
 }
 
 h6 {
-    font-size: 14px;
+    @include heading(14px);
 }
 
 p {
-    @include text-regular;
+    @include text-style(400, normal, 12px, 14px, null, null, null);
     margin: 0;
     color: #535656;
 }
 
 .italic {
-    @include text-italic;
+    font-style: italic !important;
+}
+
+.normal {
+    font-style: normal;
 }
 
 .custom-section-title {
     @include section-name;
     color: var(--color-secondary);
+}
+
+@each $weight in (300, 400, 500, 600, 700, 800) {
+    .font-weight-#{$weight} {
+        font-weight: $weight !important;
+    }
 }

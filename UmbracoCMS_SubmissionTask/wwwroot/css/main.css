@@ -22,14 +22,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 12px;
   font-size: 16px;
   color: #535656;
-}
-@media (min-width: 576px) {
-  body {
-    font-size: 14px;
-  }
 }
 
 span {
@@ -1102,14 +1096,9 @@ a {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 12px;
+  font-size: 1em;
   font-size: 1em;
   text-decoration: none;
-}
-@media (min-width: 576px) {
-  a {
-    font-size: 14px;
-  }
 }
 a:hover {
   text-decoration: underline;
@@ -1128,29 +1117,32 @@ a.no-external-icon[target=_blank]::after {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
   margin-top: 0;
   margin-bottom: 0.5em;
   line-height: 1.2;
 }
 
 h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 40px;
 }
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   h1 {
     font-size: 58px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   h1 {
     font-size: 70px;
   }
 }
 
 h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 26px;
 }
 @media (min-width: 576px) {
@@ -1158,29 +1150,43 @@ h2 {
     font-size: 32px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   h2 {
     font-size: 40px;
   }
 }
 
 h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 30px;
 }
 
 h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 22px;
 }
 
 h5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 18px;
 }
 h5.content-heading {
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
 }
 
 h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 14px;
 }
 
@@ -1199,10 +1205,11 @@ p {
 }
 
 .italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 14px;
+  font-style: italic !important;
+}
+
+.normal {
+  font-style: normal;
 }
 
 .custom-section-title {
@@ -1211,6 +1218,30 @@ p {
   font-style: normal;
   font-size: 14px;
   color: var(--color-secondary);
+}
+
+.font-weight-300 {
+  font-weight: 300 !important;
+}
+
+.font-weight-400 {
+  font-weight: 400 !important;
+}
+
+.font-weight-500 {
+  font-weight: 500 !important;
+}
+
+.font-weight-600 {
+  font-weight: 600 !important;
+}
+
+.font-weight-700 {
+  font-weight: 700 !important;
+}
+
+.font-weight-800 {
+  font-weight: 800 !important;
 }
 
 .wrapper {
@@ -1439,5 +1470,78 @@ footer .container .footer-content p {
   footer .container .footer-content p {
     font-size: 14px;
     text-align: left;
+  }
+}
+#hero-section {
+  background: #EBEBEB;
+  background-image: none;
+  padding: 10px 0;
+}
+@media (min-width: 576px) {
+  #hero-section {
+    background-image: url("../scss/@sectionBackgroundImage");
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0;
+  }
+}
+@media (min-width: 768px) {
+  #hero-section {
+    padding: 70px 0;
+  }
+}
+@media (min-width: 1200px) {
+  #hero-section {
+    padding: 100px 0;
+  }
+}
+#hero-section .container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+@media (min-width: 576px) {
+  #hero-section .container {
+    text-align: left;
+  }
+}
+#hero-section .container .content-wrapper {
+  padding: 1rem 0;
+}
+@media (min-width: 576px) {
+  #hero-section .container .content-wrapper {
+    max-width: 350px;
+  }
+}
+@media (min-width: 768px) {
+  #hero-section .container .content-wrapper {
+    max-width: 440px;
+  }
+}
+@media (min-width: 992px) {
+  #hero-section .container .content-wrapper {
+    max-width: 540px;
+  }
+}
+@media (min-width: 1200px) {
+  #hero-section .container .content-wrapper {
+    max-width: 560px;
+  }
+}
+@media (min-width: 768px) {
+  #hero-section .container .content-wrapper .paragraph {
+    font-size: 16px;
+  }
+}
+#hero-section .container .content-wrapper .button {
+  width: 100%;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  #hero-section .container .content-wrapper .button {
+    width: auto;
   }
 }

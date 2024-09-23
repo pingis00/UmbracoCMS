@@ -50,27 +50,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Add Space to Bottom
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[ImplementPropertyType("addSpaceToBottom")]
-		public virtual bool AddSpaceToBottom => this.Value<bool>(_publishedValueFallback, "addSpaceToBottom");
-
-		///<summary>
-		/// Add Space to Top
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[ImplementPropertyType("addSpaceToTop")]
-		public virtual bool AddSpaceToTop => this.Value<bool>(_publishedValueFallback, "addSpaceToTop");
-
-		///<summary>
-		/// Center Content on Page
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[ImplementPropertyType("centerContentOnPage")]
-		public virtual bool CenterContentOnPage => this.Value<bool>(_publishedValueFallback, "centerContentOnPage");
-
-		///<summary>
 		/// Section Background Color
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
