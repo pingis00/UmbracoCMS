@@ -50,6 +50,48 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Display BackgroundImage Large
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("displayBackgroundImageLarge")]
+		public virtual bool DisplayBackgroundImageLarge => this.Value<bool>(_publishedValueFallback, "displayBackgroundImageLarge");
+
+		///<summary>
+		/// Display BackgroundImage Medium
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("displayBackgroundImageMedium")]
+		public virtual bool DisplayBackgroundImageMedium => this.Value<bool>(_publishedValueFallback, "displayBackgroundImageMedium");
+
+		///<summary>
+		/// Display BackgroundImage mobile
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("displayBackgroundImageMobile")]
+		public virtual bool DisplayBackgroundImageMobile => this.Value<bool>(_publishedValueFallback, "displayBackgroundImageMobile");
+
+		///<summary>
+		/// Display BackgroundImage Small
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("displayBackgroundImageSmall")]
+		public virtual bool DisplayBackgroundImageSmall => this.Value<bool>(_publishedValueFallback, "displayBackgroundImageSmall");
+
+		///<summary>
+		/// Display BackgroundImage XL
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("displayBackgroundImageXl")]
+		public virtual bool DisplayBackgroundImageXl => this.Value<bool>(_publishedValueFallback, "displayBackgroundImageXl");
+
+		///<summary>
+		/// Display BackgroundImage XXL
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("displayBackgroundImageXxl")]
+		public virtual bool DisplayBackgroundImageXxl => this.Value<bool>(_publishedValueFallback, "displayBackgroundImageXxl");
+
+		///<summary>
 		/// Section Background Color
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
