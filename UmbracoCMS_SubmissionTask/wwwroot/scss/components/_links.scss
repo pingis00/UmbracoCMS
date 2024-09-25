@@ -1,6 +1,6 @@
-﻿a {
+﻿﻿a {
     display: inline-block;
-    @include text-regular;
+    @include text-style(400, normal, 1em);
     font-size: 1em;
     text-decoration: none;
 

@@ -22,8 +22,7 @@ img, svg {
 }
 
 body {
-    @include text-regular;
-    font-size: 16px;
+    @include text-style(400, normal, 16px);
     color: #535656;
 }
 

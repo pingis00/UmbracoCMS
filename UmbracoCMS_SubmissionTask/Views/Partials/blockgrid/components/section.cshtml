@@ -6,26 +6,21 @@
     var sectionTitle = Model?.Content.Value<string>("sectionTitle") ?? "";
     var sectionId = sectionTitle?.ToString().ToLower().Trim().Replace(" ", "-");
 
-    var spacingTopClass =(Model!.Content.Value<bool>("addSpaceToTop")) ? "spacing-top" : "";
-    var spacingBottomClass =(Model.Content.Value<bool>("addSpaceToBottom")) ? "spacing-bottom" : "";
-    var centerContentClass =(Model.Content.Value<bool>("centerContentPage")) ? "center" : "";
-
     var sectionBackgroundColorLabel = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("sectionBackgroundColor")?.Label.ToLower() ?? null;
     var backgroundColorClass = (!string.IsNullOrEmpty(sectionBackgroundColorLabel) && sectionBackgroundColorLabel != "none") ? $"custom-bg-{sectionBackgroundColorLabel}" : "";
 
     var sectionBackgroundImage = Model?.Content.Value<IPublishedContent>("sectionBackgroundImage")?.Url() ?? null;
+
+    
 }
 
 
-<section id="@sectionId" class="@spacingTopClass @spacingBottomClass @(string.IsNullOrEmpty(backgroundColorClass) ? "" : backgroundColorClass)">
+<section id="@sectionId" 
+        class="@(string.IsNullOrEmpty(backgroundColorClass) ? "" : backgroundColorClass) 
+        @(string.IsNullOrEmpty(sectionBackgroundImage) ? "" : "section-background-image")"
+        style="@(string.IsNullOrEmpty(sectionBackgroundImage) ? "" : $"background-image:url('{sectionBackgroundImage}');")">
 
-    <div class="container @centerContentClass">
-
-        @if(!string.IsNullOrEmpty(sectionBackgroundImage))
-        {
-            <img class="background-image" src="@sectionBackgroundImage" alt="@sectionTitle background image" />
-        }
-
+   <div class="container">
         @await Html.GetBlockGridItemAreasHtmlAsync(Model!)
     </div>
 </section>

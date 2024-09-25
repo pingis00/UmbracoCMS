@@ -1,37 +1,50 @@
-﻿@mixin text-regular {
+﻿@mixin text-style($weight: 400, $style: normal, $size: 12px, $sm-size: null, $md-size: null, $lg-size: null, $xl-size: null, $xxl-size: null) {
     font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 12px;
-
-    @include sm {
-        font-size: 14px;
+    font-weight: $weight;
+    font-style: $style;
+    font-size: $size;
+    
+    @if $sm-size != null {
+        @include sm {
+            font-size: $sm-size;
+        }
+    }
+    
+    @if $md-size != null {
+        @include md {
+            font-size: $md-size;
+        }
+    }
+    
+    @if $lg-size != null {
+        @include lg {
+            font-size: $lg-size;
+        }
+    }
+    
+    @if $xl-size != null {
+        @include xl {
+            font-size: $xl-size;
+        }
+    }
+    
+    @if $xxl-size != null {
+        @include xxl {
+            font-size: $xxl-size;
+        }
     }
 }
 
-@mixin text-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 14px;
+@mixin heading($size, $sm-size: null, $md-size: null, $lg-size: null, $xl-size: null, $xxl-size: null) {
+    @include text-style(700, normal, $size, $sm-size, $md-size, $lg-size, $xl-size, $xxl-size);
 }
 
-@mixin heading {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
+@mixin content-heading($size: 14px, $sm-size: null, $md-size: null, $lg-size: null, $xl-size: null) {
+    @include text-style(700, normal, $size, $sm-size, $md-size, $lg-size, $xl-size);
 }
 
-@mixin content-heading {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-}
-
-@mixin section-name {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 14px;
+@mixin section-name($size: 14px, $sm-size: null, $md-size: null, $lg-size: null, $xl-size: null) {
+    @include text-style(700, normal, $size, $sm-size, $md-size, $lg-size, $xl-size);
 }
 
 @mixin heading-colors($h1-color, $h2-color, $h3-color, $h4-color, $h5-color, $h6-color) {

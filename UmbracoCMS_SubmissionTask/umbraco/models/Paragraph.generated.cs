@@ -50,11 +50,323 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Large Screen Font Size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("largeScreenFontSize")]
+		public virtual string LargeScreenFontSize => this.Value<string>(_publishedValueFallback, "largeScreenFontSize");
+
+		///<summary>
+		/// Large Screen Padding Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("largeScreenPaddingBottom")]
+		public virtual string LargeScreenPaddingBottom => this.Value<string>(_publishedValueFallback, "largeScreenPaddingBottom");
+
+		///<summary>
+		/// Large Screen Padding Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("largeScreenPaddingLeft")]
+		public virtual string LargeScreenPaddingLeft => this.Value<string>(_publishedValueFallback, "largeScreenPaddingLeft");
+
+		///<summary>
+		/// Large Screen Padding Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("largeScreenPaddingRight")]
+		public virtual string LargeScreenPaddingRight => this.Value<string>(_publishedValueFallback, "largeScreenPaddingRight");
+
+		///<summary>
+		/// Large Screen Padding Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("largeScreenPaddingTop")]
+		public virtual string LargeScreenPaddingTop => this.Value<string>(_publishedValueFallback, "largeScreenPaddingTop");
+
+		///<summary>
+		/// Large Screen Text Align
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("largeScreenTextAlign")]
+		public virtual string LargeScreenTextAlign => this.Value<string>(_publishedValueFallback, "largeScreenTextAlign");
+
+		///<summary>
+		/// Medium Screen Font Size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mediumScreenFontSize")]
+		public virtual string MediumScreenFontSize => this.Value<string>(_publishedValueFallback, "mediumScreenFontSize");
+
+		///<summary>
+		/// Medium Screen Padding Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mediumScreenPaddingBottom")]
+		public virtual string MediumScreenPaddingBottom => this.Value<string>(_publishedValueFallback, "mediumScreenPaddingBottom");
+
+		///<summary>
+		/// Medium Screen Padding Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mediumScreenPaddingLeft")]
+		public virtual string MediumScreenPaddingLeft => this.Value<string>(_publishedValueFallback, "mediumScreenPaddingLeft");
+
+		///<summary>
+		/// Medium Screen Padding Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mediumScreenPaddingRight")]
+		public virtual string MediumScreenPaddingRight => this.Value<string>(_publishedValueFallback, "mediumScreenPaddingRight");
+
+		///<summary>
+		/// Medium Screen Padding Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mediumScreenPaddingTop")]
+		public virtual string MediumScreenPaddingTop => this.Value<string>(_publishedValueFallback, "mediumScreenPaddingTop");
+
+		///<summary>
+		/// Medium Screen Text Align
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mediumScreenTextAlign")]
+		public virtual string MediumScreenTextAlign => this.Value<string>(_publishedValueFallback, "mediumScreenTextAlign");
+
+		///<summary>
+		/// Mobile Screen Font Size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mobileScreenFontSize")]
+		public virtual string MobileScreenFontSize => this.Value<string>(_publishedValueFallback, "mobileScreenFontSize");
+
+		///<summary>
+		/// Mobile Screen Padding Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mobileScreenPaddingBottom")]
+		public virtual string MobileScreenPaddingBottom => this.Value<string>(_publishedValueFallback, "mobileScreenPaddingBottom");
+
+		///<summary>
+		/// Mobile Screen Padding Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mobileScreenPaddingLeft")]
+		public virtual string MobileScreenPaddingLeft => this.Value<string>(_publishedValueFallback, "mobileScreenPaddingLeft");
+
+		///<summary>
+		/// Mobile Screen Padding Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mobileScreenPaddingRight")]
+		public virtual string MobileScreenPaddingRight => this.Value<string>(_publishedValueFallback, "mobileScreenPaddingRight");
+
+		///<summary>
+		/// Mobile Screen Padding Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mobileScreenPaddingTop")]
+		public virtual string MobileScreenPaddingTop => this.Value<string>(_publishedValueFallback, "mobileScreenPaddingTop");
+
+		///<summary>
+		/// Mobile Screen Text Align
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mobileScreenTextAlign")]
+		public virtual string MobileScreenTextAlign => this.Value<string>(_publishedValueFallback, "mobileScreenTextAlign");
+
+		///<summary>
 		/// Paragraph Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("paragraphContent")]
 		public virtual string ParagraphContent => this.Value<string>(_publishedValueFallback, "paragraphContent");
+
+		///<summary>
+		/// Paragraph Font Style
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("paragraphFontStyle")]
+		public virtual string ParagraphFontStyle => this.Value<string>(_publishedValueFallback, "paragraphFontStyle");
+
+		///<summary>
+		/// Paragraph Font Weight
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("paragraphFontWeight")]
+		public virtual string ParagraphFontWeight => this.Value<string>(_publishedValueFallback, "paragraphFontWeight");
+
+		///<summary>
+		/// Small Screen Font Size 
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("smallScreenFontSize")]
+		public virtual string SmallScreenFontSize => this.Value<string>(_publishedValueFallback, "smallScreenFontSize");
+
+		///<summary>
+		/// Small Screen Padding Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("smallScreenPaddingBottom")]
+		public virtual string SmallScreenPaddingBottom => this.Value<string>(_publishedValueFallback, "smallScreenPaddingBottom");
+
+		///<summary>
+		/// Small Screen Padding Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("smallScreenPaddingLeft")]
+		public virtual string SmallScreenPaddingLeft => this.Value<string>(_publishedValueFallback, "smallScreenPaddingLeft");
+
+		///<summary>
+		/// Small Screen Padding Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("smallScreenPaddingRight")]
+		public virtual string SmallScreenPaddingRight => this.Value<string>(_publishedValueFallback, "smallScreenPaddingRight");
+
+		///<summary>
+		/// Small Screen Padding Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("smallScreenPaddingTop")]
+		public virtual string SmallScreenPaddingTop => this.Value<string>(_publishedValueFallback, "smallScreenPaddingTop");
+
+		///<summary>
+		/// Small Screen Text Align
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("smallScreenTextAlign")]
+		public virtual string SmallScreenTextAlign => this.Value<string>(_publishedValueFallback, "smallScreenTextAlign");
+
+		///<summary>
+		/// Text Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("textColor")]
+		public virtual global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor TextColor => this.Value<global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>(_publishedValueFallback, "textColor");
+
+		///<summary>
+		/// XL Screen Font Size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xlScreenFontSize")]
+		public virtual string XlScreenFontSize => this.Value<string>(_publishedValueFallback, "xlScreenFontSize");
+
+		///<summary>
+		/// XL Screen Padding Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xlScreenPaddingBottom")]
+		public virtual string XlScreenPaddingBottom => this.Value<string>(_publishedValueFallback, "xlScreenPaddingBottom");
+
+		///<summary>
+		/// XL Screen Padding Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xlScreenPaddingLeft")]
+		public virtual string XlScreenPaddingLeft => this.Value<string>(_publishedValueFallback, "xlScreenPaddingLeft");
+
+		///<summary>
+		/// XL Screen Padding Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xlScreenPaddingRight")]
+		public virtual string XlScreenPaddingRight => this.Value<string>(_publishedValueFallback, "xlScreenPaddingRight");
+
+		///<summary>
+		/// XL Screen Padding Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xlScreenPaddingTop")]
+		public virtual string XlScreenPaddingTop => this.Value<string>(_publishedValueFallback, "xlScreenPaddingTop");
+
+		///<summary>
+		/// XL Screen Text Align
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xlScreenTextAlign")]
+		public virtual string XlScreenTextAlign => this.Value<string>(_publishedValueFallback, "xlScreenTextAlign");
+
+		///<summary>
+		/// XXL Screen Font Size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xxlScreenFontSize")]
+		public virtual string XxlScreenFontSize => this.Value<string>(_publishedValueFallback, "xxlScreenFontSize");
+
+		///<summary>
+		/// XXL Screen Padding Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xxlScreenPaddingBottom")]
+		public virtual string XxlScreenPaddingBottom => this.Value<string>(_publishedValueFallback, "xxlScreenPaddingBottom");
+
+		///<summary>
+		/// XXL Screen Padding Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xxlScreenPaddingLeft")]
+		public virtual string XxlScreenPaddingLeft => this.Value<string>(_publishedValueFallback, "xxlScreenPaddingLeft");
+
+		///<summary>
+		/// XXL Screen Padding Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xxlScreenPaddingRight")]
+		public virtual string XxlScreenPaddingRight => this.Value<string>(_publishedValueFallback, "xxlScreenPaddingRight");
+
+		///<summary>
+		/// XXL Screen Padding Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xxlScreenPaddingTop")]
+		public virtual string XxlScreenPaddingTop => this.Value<string>(_publishedValueFallback, "xxlScreenPaddingTop");
+
+		///<summary>
+		/// XXL Screen Text Align
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xxlScreenTextAlign")]
+		public virtual string XxlScreenTextAlign => this.Value<string>(_publishedValueFallback, "xxlScreenTextAlign");
 	}
 }

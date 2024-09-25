@@ -1,64 +1,178 @@
-﻿h1, h2, h3, h4, h5, h6 {
-    @include heading;
+﻿﻿h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: 0.5em;
     line-height: 1.2;
 }
 
 h1 {
-    font-size: 40px;
-
-    @include sm {
-        font-size: 58px;
-    }
-
-    @include xl {
-        font-size: 70px;
-    }
+    @include heading(40px, null, 58px, 70px, null);
 }
 
 h2 {
-    font-size: 26px;
-
-    @include sm {
-        font-size: 32px;
-    }
-
-    @include xl {
-        font-size: 40px;
-    }
+    @include heading(26px, 32px, null, 40px, null);
 }
 
 h3 {
-    font-size: 30px;
+    @include heading(30px);
 }
 
 h4 {
-    font-size: 22px;
+    @include heading(22px);
 }
 
 h5 {
-    font-size: 18px;
+    @include heading(18px);
+
     &.content-heading {
-        @include content-heading;
+        @include content-heading(18px);
     }
 }
 
 h6 {
-    font-size: 14px;
+    @include heading(14px);
 }
 
 p {
-    @include text-regular;
+    @include text-style(400, normal, 12px, 14px, null, null, null);
     margin: 0;
     color: #535656;
 }
 
 .italic {
-    @include text-italic;
+    font-style: italic !important;
+}
+
+.normal {
+    font-style: normal;
 }
 
 .custom-section-title {
     @include section-name;
     color: var(--color-secondary);
 }
+
+@each $weight in (300, 400, 500, 600, 700, 800) {
+    .font-weight-#{$weight} {
+        font-weight: $weight !important;
+    }
+}
+
+@each $size, $breakpoint in ('xs': null, 'sm': 576px, 'md': 768px, 'lg': 992px, 'xl': 1200px, 'xxl': 1400px) {
+    @each $font-size in (xs, s, m, l, xl, xxl) {
+        @if $size == 'xs' {
+            .font-size-xs-#{$font-size} {
+                @if $font-size == xs {
+                    font-size: 12px;
+                }
+                @else if $font-size == s {
+                    font-size: 14px;
+                }
+                @else if $font-size == m {
+                    font-size: 16px;
+                }
+                @else if $font-size == l {
+                    font-size: 18px;
+                }
+                @else if $font-size == xl {
+                    font-size: 20px;
+                }
+                @else if $font-size == xxl {
+                    font-size: 24px;
+                }
+            }
+        }
+        @else {
+            @media (min-width: $breakpoint) {
+                .font-size-#{$size}-#{$font-size} {
+                    @if $font-size == xs {
+                        font-size: 12px;
+                    }
+                    @else if $font-size == s {
+                        font-size: 14px;
+                    }
+                    @else if $font-size == m {
+                        font-size: 16px;
+                    }
+                    @else if $font-size == l {
+                        font-size: 18px;
+                    }
+                    @else if $font-size == xl {
+                        font-size: 20px;
+                    }
+                    @else if $font-size == xxl {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@each $size, $breakpoint in ('xs': null, 'sm': 576px, 'md': 768px, 'lg': 992px, 'xl': 1200px, 'xxl': 1400px) {
+    @each $text-align in (left, center, right, justify) {
+        @if $size == 'xs' {
+            .text-align-xs-#{$text-align} {
+                text-align: $text-align;
+            }
+        }
+        @else {
+            @media (min-width: $breakpoint) {
+                .text-align-#{$size}-#{$text-align} {
+                    text-align: $text-align;
+                }
+            }
+        }
+    }
+}
+
+@each $size, $breakpoint in ('mobile': null, 'small': 576px, 'medium': 768px, 'large': 992px, 'xl': 1200px, 'xxl': 1400px) {
+    @each $padding in (none, xs, s, m, l, xl, xxl) {
+        $spacing-value: if($padding == none, 0, if($padding == xs, 5px, if($padding == s, 10px, if($padding == m, 15px, if($padding == l, 20px, if($padding == xl, 40px, 60px))))));
+
+        @if $size == 'mobile' {
+            .p-#{$size}-#{$padding} {
+                padding: $spacing-value !important;
+            }
+
+            .p-t-#{$size}-#{$padding} {
+                padding-top: $spacing-value !important;
+            }
+
+            .p-b-#{$size}-#{$padding} {
+                padding-bottom: $spacing-value !important;
+            }
+
+            .p-l-#{$size}-#{$padding} {
+                padding-left: $spacing-value !important;
+            }
+
+            .p-r-#{$size}-#{$padding} {
+                padding-right: $spacing-value !important;
+            }
+        }
+        @else {
+            @media (min-width: $breakpoint) {
+                .p-#{$size}-#{$padding} {
+                    padding: $spacing-value !important;
+                }
+
+                .p-t-#{$size}-#{$padding} {
+                    padding-top: $spacing-value !important;
+                }
+
+                .p-b-#{$size}-#{$padding} {
+                    padding-bottom: $spacing-value !important;
+                }
+
+                .p-l-#{$size}-#{$padding} {
+                    padding-left: $spacing-value !important;
+                }
+
+                .p-r-#{$size}-#{$padding} {
+                    padding-right: $spacing-value !important;
+                }
+            }
+        }
+    }
+}
+
