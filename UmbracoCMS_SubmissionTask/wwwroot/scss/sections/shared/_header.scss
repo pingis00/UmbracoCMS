@@ -22,21 +22,6 @@
 
         #logo {
             grid-area: logo;
-
-            img {
-                width: 70%;
-                height: auto;
-
-                @include sm {
-                    width: 85%;
-                    height: auto;
-                }
-
-                @include md {
-                    width: 100%;
-                    height: auto;
-                }
-            }
         }
 
         #menu {

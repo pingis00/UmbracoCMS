@@ -1,4 +1,4 @@
-﻿h1, h2, h3, h4, h5, h6 {
+﻿﻿h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: 0.5em;
     line-height: 1.2;
@@ -56,3 +56,123 @@ p {
         font-weight: $weight !important;
     }
 }
+
+@each $size, $breakpoint in ('xs': null, 'sm': 576px, 'md': 768px, 'lg': 992px, 'xl': 1200px, 'xxl': 1400px) {
+    @each $font-size in (xs, s, m, l, xl, xxl) {
+        @if $size == 'xs' {
+            .font-size-xs-#{$font-size} {
+                @if $font-size == xs {
+                    font-size: 12px;
+                }
+                @else if $font-size == s {
+                    font-size: 14px;
+                }
+                @else if $font-size == m {
+                    font-size: 16px;
+                }
+                @else if $font-size == l {
+                    font-size: 18px;
+                }
+                @else if $font-size == xl {
+                    font-size: 20px;
+                }
+                @else if $font-size == xxl {
+                    font-size: 24px;
+                }
+            }
+        }
+        @else {
+            @media (min-width: $breakpoint) {
+                .font-size-#{$size}-#{$font-size} {
+                    @if $font-size == xs {
+                        font-size: 12px;
+                    }
+                    @else if $font-size == s {
+                        font-size: 14px;
+                    }
+                    @else if $font-size == m {
+                        font-size: 16px;
+                    }
+                    @else if $font-size == l {
+                        font-size: 18px;
+                    }
+                    @else if $font-size == xl {
+                        font-size: 20px;
+                    }
+                    @else if $font-size == xxl {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@each $size, $breakpoint in ('xs': null, 'sm': 576px, 'md': 768px, 'lg': 992px, 'xl': 1200px, 'xxl': 1400px) {
+    @each $text-align in (left, center, right, justify) {
+        @if $size == 'xs' {
+            .text-align-xs-#{$text-align} {
+                text-align: $text-align;
+            }
+        }
+        @else {
+            @media (min-width: $breakpoint) {
+                .text-align-#{$size}-#{$text-align} {
+                    text-align: $text-align;
+                }
+            }
+        }
+    }
+}
+
+@each $size, $breakpoint in ('mobile': null, 'small': 576px, 'medium': 768px, 'large': 992px, 'xl': 1200px, 'xxl': 1400px) {
+    @each $padding in (none, xs, s, m, l, xl, xxl) {
+        $spacing-value: if($padding == none, 0, if($padding == xs, 5px, if($padding == s, 10px, if($padding == m, 15px, if($padding == l, 20px, if($padding == xl, 40px, 60px))))));
+
+        @if $size == 'mobile' {
+            .p-#{$size}-#{$padding} {
+                padding: $spacing-value !important;
+            }
+
+            .p-t-#{$size}-#{$padding} {
+                padding-top: $spacing-value !important;
+            }
+
+            .p-b-#{$size}-#{$padding} {
+                padding-bottom: $spacing-value !important;
+            }
+
+            .p-l-#{$size}-#{$padding} {
+                padding-left: $spacing-value !important;
+            }
+
+            .p-r-#{$size}-#{$padding} {
+                padding-right: $spacing-value !important;
+            }
+        }
+        @else {
+            @media (min-width: $breakpoint) {
+                .p-#{$size}-#{$padding} {
+                    padding: $spacing-value !important;
+                }
+
+                .p-t-#{$size}-#{$padding} {
+                    padding-top: $spacing-value !important;
+                }
+
+                .p-b-#{$size}-#{$padding} {
+                    padding-bottom: $spacing-value !important;
+                }
+
+                .p-l-#{$size}-#{$padding} {
+                    padding-left: $spacing-value !important;
+                }
+
+                .p-r-#{$size}-#{$padding} {
+                    padding-right: $spacing-value !important;
+                }
+            }
+        }
+    }
+}
+

@@ -6,13 +6,6 @@
     var sectionTitle = Model?.Content.Value<string>("sectionTitle") ?? "";
     var sectionId = sectionTitle?.ToString().ToLower().Trim().Replace(" ", "-");
 
-    var paddingTop = Model.Content.Value<int>("paddingTop");
-    var paddingBottom = Model.Content.Value<int>("paddingBottom");
-    var paddingLeft = Model.Content.Value<int>("paddingLeft");
-    var paddingRight = Model.Content.Value<int>("paddingRight");
-
-    var paddingClass = $"padding-{paddingTop}-{paddingRight}-{paddingBottom}-{paddingLeft}";
-
     var sectionBackgroundColorLabel = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("sectionBackgroundColor")?.Label.ToLower() ?? null;
     var backgroundColorClass = (!string.IsNullOrEmpty(sectionBackgroundColorLabel) && sectionBackgroundColorLabel != "none") ? $"custom-bg-{sectionBackgroundColorLabel}" : "";
 
@@ -22,15 +15,12 @@
 }
 
 
-<section id="@sectionId" class="@(string.IsNullOrEmpty(backgroundColorClass) ? "" : backgroundColorClass) @paddingClass">
+<section id="@sectionId" 
+        class="@(string.IsNullOrEmpty(backgroundColorClass) ? "" : backgroundColorClass) 
+        @(string.IsNullOrEmpty(sectionBackgroundImage) ? "" : "section-background-image")"
+        style="@(string.IsNullOrEmpty(sectionBackgroundImage) ? "" : $"background-image:url('{sectionBackgroundImage}');")">
 
-    <div class="container">
-
-        @if(!string.IsNullOrEmpty(sectionBackgroundImage))
-        {
-            <img class="background-image" src="@sectionBackgroundImage" alt="@sectionTitle background image" />
-        }
-
+   <div class="container">
         @await Html.GetBlockGridItemAreasHtmlAsync(Model!)
     </div>
 </section>
