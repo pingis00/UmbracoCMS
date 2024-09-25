@@ -2,6 +2,7 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
+@using UmbracoCMS_SubmissionTask.Views.Helpers
 @{
     var sectionTitle = Model?.Content.Value<string>("sectionTitle") ?? "";
     var sectionId = sectionTitle?.ToString().ToLower().Trim().Replace(" ", "-");
@@ -10,14 +11,14 @@
     var backgroundColorClass = (!string.IsNullOrEmpty(sectionBackgroundColorLabel) && sectionBackgroundColorLabel != "none") ? $"custom-bg-{sectionBackgroundColorLabel}" : "";
 
     var sectionBackgroundImage = Model?.Content.Value<IPublishedContent>("sectionBackgroundImage")?.Url() ?? null;
-
+    var showHideImageClasses = DisplayImageHelper.GetDisplayClasses(Model!);
     
 }
 
 
 <section id="@sectionId" 
         class="@(string.IsNullOrEmpty(backgroundColorClass) ? "" : backgroundColorClass) 
-        @(string.IsNullOrEmpty(sectionBackgroundImage) ? "" : "section-background-image")"
+        @(string.IsNullOrEmpty(sectionBackgroundImage) ? "" : $"section-background-image {showHideImageClasses}")"
         style="@(string.IsNullOrEmpty(sectionBackgroundImage) ? "" : $"background-image:url('{sectionBackgroundImage}');")">
 
    <div class="container">
