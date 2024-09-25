@@ -67,7 +67,7 @@
     var(--color-secondary)  
 );
 
-@each $color, $hex in ( 'dark': #171717, 'primary': #4F5955, 'secondary': #D9C3A9, 'accent': #F2EDDC, 'gray': #F7F7F7, 'light': #FFFFFF ) {
+@each $color, $hex in ( 'default': #535656, 'dark': #171717, 'primary': #4F5955, 'secondary': #D9C3A9, 'accent': #F2EDDC, 'gray': #F7F7F7, 'light': #FFFFFF ) {
     .text-color-#{$color} {
         color: $hex !important;
     }

@@ -50,12 +50,60 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Font Style
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("fontStyle")]
+		public virtual string FontStyle => this.Value<string>(_publishedValueFallback, "fontStyle");
+
+		///<summary>
+		/// Font Weight
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("fontWeight")]
+		public virtual string FontWeight => this.Value<string>(_publishedValueFallback, "fontWeight");
+
+		///<summary>
 		/// Large Screen Font Size
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("largeScreenFontSize")]
 		public virtual string LargeScreenFontSize => this.Value<string>(_publishedValueFallback, "largeScreenFontSize");
+
+		///<summary>
+		/// Large Screen Margin Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("largeScreenMarginBottom")]
+		public virtual string LargeScreenMarginBottom => this.Value<string>(_publishedValueFallback, "largeScreenMarginBottom");
+
+		///<summary>
+		/// Large Screen Margin Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("largeScreenMarginLeft")]
+		public virtual string LargeScreenMarginLeft => this.Value<string>(_publishedValueFallback, "largeScreenMarginLeft");
+
+		///<summary>
+		/// Large Screen Margin Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("largeScreenMarginRight")]
+		public virtual string LargeScreenMarginRight => this.Value<string>(_publishedValueFallback, "largeScreenMarginRight");
+
+		///<summary>
+		/// Large Screen Margin Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("largeScreenMarginTop")]
+		public virtual string LargeScreenMarginTop => this.Value<string>(_publishedValueFallback, "largeScreenMarginTop");
 
 		///<summary>
 		/// Large Screen Padding Bottom
@@ -106,6 +154,38 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string MediumScreenFontSize => this.Value<string>(_publishedValueFallback, "mediumScreenFontSize");
 
 		///<summary>
+		/// Medium Screen Margin Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mediumScreenMarginBottom")]
+		public virtual string MediumScreenMarginBottom => this.Value<string>(_publishedValueFallback, "mediumScreenMarginBottom");
+
+		///<summary>
+		/// Medium Screen Margin Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mediumScreenMarginLeft")]
+		public virtual string MediumScreenMarginLeft => this.Value<string>(_publishedValueFallback, "mediumScreenMarginLeft");
+
+		///<summary>
+		/// Medium Screen Margin Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mediumScreenMarginRight")]
+		public virtual string MediumScreenMarginRight => this.Value<string>(_publishedValueFallback, "mediumScreenMarginRight");
+
+		///<summary>
+		/// Medium Screen Margin Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mediumScreenMarginTop")]
+		public virtual string MediumScreenMarginTop => this.Value<string>(_publishedValueFallback, "mediumScreenMarginTop");
+
+		///<summary>
 		/// Medium Screen Padding Bottom
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -152,6 +232,38 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("mobileScreenFontSize")]
 		public virtual string MobileScreenFontSize => this.Value<string>(_publishedValueFallback, "mobileScreenFontSize");
+
+		///<summary>
+		/// Mobile Screen Margin Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mobileScreenMarginBottom")]
+		public virtual string MobileScreenMarginBottom => this.Value<string>(_publishedValueFallback, "mobileScreenMarginBottom");
+
+		///<summary>
+		/// Mobile Screen Margin Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mobileScreenMarginLeft")]
+		public virtual string MobileScreenMarginLeft => this.Value<string>(_publishedValueFallback, "mobileScreenMarginLeft");
+
+		///<summary>
+		/// Mobile Screen Margin Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mobileScreenMarginRight")]
+		public virtual string MobileScreenMarginRight => this.Value<string>(_publishedValueFallback, "mobileScreenMarginRight");
+
+		///<summary>
+		/// Mobile Screen Margin Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mobileScreenMarginTop")]
+		public virtual string MobileScreenMarginTop => this.Value<string>(_publishedValueFallback, "mobileScreenMarginTop");
 
 		///<summary>
 		/// Mobile Screen Padding Bottom
@@ -202,28 +314,44 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string ParagraphContent => this.Value<string>(_publishedValueFallback, "paragraphContent");
 
 		///<summary>
-		/// Paragraph Font Style
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("paragraphFontStyle")]
-		public virtual string ParagraphFontStyle => this.Value<string>(_publishedValueFallback, "paragraphFontStyle");
-
-		///<summary>
-		/// Paragraph Font Weight
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("paragraphFontWeight")]
-		public virtual string ParagraphFontWeight => this.Value<string>(_publishedValueFallback, "paragraphFontWeight");
-
-		///<summary>
 		/// Small Screen Font Size 
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("smallScreenFontSize")]
 		public virtual string SmallScreenFontSize => this.Value<string>(_publishedValueFallback, "smallScreenFontSize");
+
+		///<summary>
+		/// Small Screen Margin Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("smallScreenMarginBottom")]
+		public virtual string SmallScreenMarginBottom => this.Value<string>(_publishedValueFallback, "smallScreenMarginBottom");
+
+		///<summary>
+		/// Small Screen Margin Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("smallScreenMarginLeft")]
+		public virtual string SmallScreenMarginLeft => this.Value<string>(_publishedValueFallback, "smallScreenMarginLeft");
+
+		///<summary>
+		/// Small Screen Margin Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("smallScreenMarginRight")]
+		public virtual string SmallScreenMarginRight => this.Value<string>(_publishedValueFallback, "smallScreenMarginRight");
+
+		///<summary>
+		/// Small Screen Margin Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("smallScreenMarginTop")]
+		public virtual string SmallScreenMarginTop => this.Value<string>(_publishedValueFallback, "smallScreenMarginTop");
 
 		///<summary>
 		/// Small Screen Padding Bottom
@@ -282,6 +410,38 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string XlScreenFontSize => this.Value<string>(_publishedValueFallback, "xlScreenFontSize");
 
 		///<summary>
+		/// XL Screen Margin Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xlScreenMarginBottom")]
+		public virtual string XlScreenMarginBottom => this.Value<string>(_publishedValueFallback, "xlScreenMarginBottom");
+
+		///<summary>
+		/// XL Screen Margin Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xlScreenMarginLeft")]
+		public virtual string XlScreenMarginLeft => this.Value<string>(_publishedValueFallback, "xlScreenMarginLeft");
+
+		///<summary>
+		/// XL Screen Margin Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xlScreenMarginRight")]
+		public virtual string XlScreenMarginRight => this.Value<string>(_publishedValueFallback, "xlScreenMarginRight");
+
+		///<summary>
+		/// XL Screen Margin Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xlScreenMarginTop")]
+		public virtual string XlScreenMarginTop => this.Value<string>(_publishedValueFallback, "xlScreenMarginTop");
+
+		///<summary>
 		/// XL Screen Padding Bottom
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -328,6 +488,38 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("xxlScreenFontSize")]
 		public virtual string XxlScreenFontSize => this.Value<string>(_publishedValueFallback, "xxlScreenFontSize");
+
+		///<summary>
+		/// XXL Screen Margin Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xxlScreenMarginBottom")]
+		public virtual string XxlScreenMarginBottom => this.Value<string>(_publishedValueFallback, "xxlScreenMarginBottom");
+
+		///<summary>
+		/// XXL Screen Margin Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xxlScreenMarginLeft")]
+		public virtual string XxlScreenMarginLeft => this.Value<string>(_publishedValueFallback, "xxlScreenMarginLeft");
+
+		///<summary>
+		/// XXL Screen Margin Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xxlScreenMarginRight")]
+		public virtual string XxlScreenMarginRight => this.Value<string>(_publishedValueFallback, "xxlScreenMarginRight");
+
+		///<summary>
+		/// XXL Screen Margin Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xxlScreenMarginTop")]
+		public virtual string XxlScreenMarginTop => this.Value<string>(_publishedValueFallback, "xxlScreenMarginTop");
 
 		///<summary>
 		/// XXL Screen Padding Bottom

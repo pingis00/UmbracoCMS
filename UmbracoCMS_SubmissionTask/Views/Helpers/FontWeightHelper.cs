@@ -6,8 +6,8 @@ public class FontWeightHelper
 {
     public static string GetFontWeightClasses(BlockGridItem model)
     {
-        var fontWeight = model?.Content.Value<string[]>("paragraphFontWeight")?.FirstOrDefault()
-                            ?? model?.Content.Value<string>("paragraphFontWeight")
+        var fontWeight = model?.Content.Value<string[]>("fontWeight")?.FirstOrDefault()
+                            ?? model?.Content.Value<string>("fontWeight")
                             ?? "400 Normal";
         return fontWeight.Split(' ')[0] switch
         {
