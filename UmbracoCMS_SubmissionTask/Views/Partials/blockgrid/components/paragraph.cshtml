@@ -7,19 +7,23 @@
 
 @{
     var paragraphContent = Model?.Content.Value<string>("paragraphContent") ?? null;
-    var fontStyle = Model?.Content.Value<string[]>("paragraphFontStyle")?.FirstOrDefault() ?? Model?.Content.Value<string>("paragraphFontStyle") ?? "Normal";
+
+    var fontStyle = Model?.Content.Value<string[]>("fontStyle")?.FirstOrDefault() ?? Model?.Content.Value<string>("fontStyle") ?? "Normal";
     var fontStyleClass = (fontStyle.Equals("Italic", StringComparison.OrdinalIgnoreCase)) ? "italic" : "normal";
+
     var textColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("textColor")?.Label.ToLower() ?? null;
     var textColorClass = (!string.IsNullOrEmpty(textColor) && textColor != "none") ? $"text-color-{textColor}" : "";
+
     var responsivePadding = ResponsivePaddingHelper.GetResponsivePaddingClasses(Model!);
+    var responsiveMargin = ResponsiveMarginHelper.GetResponsiveMarginClasses(Model!);
     var fontWeightClass = FontWeightHelper.GetFontWeightClasses(Model!);
-    var responsiveFontClasses = ResponsiveFontHelper.GetResponsiveFontClasses(Model!);
+    var fontClassesForParagraph = ResponsiveFontHelper.GetResponsiveFontClasses(Model!, "p");
     var responsiveTextAlign = ResponsiveTextAlignHelper.GetResponsiveTextAlign(Model!);
 }
 
 @if (!string.IsNullOrEmpty(paragraphContent))
 {
-    <p class="paragraph @responsivePadding @fontStyleClass @textColorClass @fontWeightClass @responsiveFontClasses @responsiveTextAlign">
+    <p class="paragraph @responsivePadding @responsiveMargin @fontStyleClass @(string.IsNullOrEmpty(textColorClass) ? "" : textColorClass) @fontWeightClass @fontClassesForParagraph @responsiveTextAlign">
         @paragraphContent
     </p>
 }

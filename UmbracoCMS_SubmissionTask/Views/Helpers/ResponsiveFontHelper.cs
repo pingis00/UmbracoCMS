@@ -4,7 +4,7 @@ namespace UmbracoCMS_SubmissionTask.Views.Helpers;
 
 public static class ResponsiveFontHelper
 {
-    public static string GetResponsiveFontClasses(BlockGridItem model)
+    public static string GetResponsiveFontClasses(BlockGridItem model, string element = "p")
     {
         var mobileFontSize = model?.Content.Value<string[]>("mobileFontSize")?.FirstOrDefault()
                                 ?? model?.Content.Value<string>("mobileFontSize")
@@ -30,12 +30,12 @@ public static class ResponsiveFontHelper
                               ?? model?.Content.Value<string>("xxlScreenFontSize")
                               ?? "M";
 
-        var mobileFontClass = $"font-size-xs-{mobileFontSize.ToLower()}";
-        var smallScreenFontClass = $"font-size-sm-{smallScreenFontSize.ToLower()}";
-        var mediumScreenFontClass = $"font-size-md-{mediumScreenFontSize.ToLower()}";
-        var largeScreenFontClass = $"font-size-lg-{largeScreenFontSize.ToLower()}";
-        var xlScreenFontClass = $"font-size-xl-{xlScreenFontSize.ToLower()}";
-        var xxlScreenFontClass = $"font-size-xxl-{xxlScreenFontSize.ToLower()}";
+        var mobileFontClass = $"{element}-font-size-xs-{mobileFontSize.ToLower()}";
+        var smallScreenFontClass = $"{element}-font-size-sm-{smallScreenFontSize.ToLower()}";
+        var mediumScreenFontClass = $"{element}-font-size-md-{mediumScreenFontSize.ToLower()}";
+        var largeScreenFontClass = $"{element}-font-size-lg-{largeScreenFontSize.ToLower()}";
+        var xlScreenFontClass = $"{element}-font-size-xl-{xlScreenFontSize.ToLower()}";
+        var xxlScreenFontClass = $"{element}-font-size-xxl-{xxlScreenFontSize.ToLower()}";
 
         return $"{mobileFontClass} {smallScreenFontClass} {mediumScreenFontClass} {largeScreenFontClass} {xlScreenFontClass} {xxlScreenFontClass}";
     }
