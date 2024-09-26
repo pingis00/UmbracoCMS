@@ -1,11 +1,26 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters
+@using UmbracoCMS_SubmissionTask.Views.Helpers
+@using Umbraco.Cms.Core.Models.Blocks
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-
 @{
     var headlineContent = Model?.Content.Value<string>("headlineContent") ?? null;
+    var fontStyle = Model?.Content.Value<string[]>("fontStyle")?.FirstOrDefault() ?? Model?.Content.Value<string>("fontStyle") ?? "Normal";
+    var fontStyleClass = (fontStyle.Equals("Italic", StringComparison.OrdinalIgnoreCase)) ? "italic" : "normal";
+
+    var textColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("textColor")?.Label.ToLower() ?? null;
+    var textColorClass = (!string.IsNullOrEmpty(textColor) && textColor != "none") ? $"text-color-{textColor}" : "";
+
+    var responsivePadding = ResponsivePaddingHelper.GetResponsivePaddingClasses(Model!);
+    var responsiveMargin = ResponsiveMarginHelper.GetResponsiveMarginClasses(Model!);
+    var fontWeightClass = FontWeightHelper.GetFontWeightClasses(Model!);
+    var fontClassesForH1 = ResponsiveFontHelper.GetResponsiveFontClasses(Model!, "h3");
+    var responsiveTextAlign = ResponsiveTextAlignHelper.GetResponsiveTextAlign(Model!);
 }
 
 @if (!string.IsNullOrEmpty(headlineContent)) {
-    <h3 class="heading-3">@headlineContent</h3>
+    <h3 class="heading-3 @responsivePadding @responsiveMargin @fontStyleClass @(string.IsNullOrEmpty(textColorClass) ? "" : textColorClass) @fontWeightClass @fontClassesForH1 @responsiveTextAlign">
+        @headlineContent
+    </h3>
 }
