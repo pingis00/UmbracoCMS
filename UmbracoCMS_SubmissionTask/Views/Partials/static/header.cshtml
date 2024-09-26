@@ -28,7 +28,7 @@
                 {                   
                     @foreach (var item in selection)
                     {
-                        <a class="@(item.IsAncestorOrSelf(Model) ? "nav-link active" : "nav-link")" href="@item.Url(PublishedUrlProvider)" title="@item.Name">@item.Name</a>
+                        <a class=" link @(item.IsAncestorOrSelf(Model) ? "nav-link active" : "nav-link")" href="@item.Url(PublishedUrlProvider)" title="@item.Name">@item.Name</a>
                     }                    
                 }
             </nav>

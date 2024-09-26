@@ -2,4 +2,15 @@
 @import "./shared/_page-title.scss";
 @import "./shared/_topBar.scss";
 @import "./shared/_footer.scss";
-@import "./Home/_hero-section.scss";
+
+/*.a-link {  
+    display: inline-block;
+    @include text-style(400, normal, 1em);
+    font-size: 1em;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+    
+}*/

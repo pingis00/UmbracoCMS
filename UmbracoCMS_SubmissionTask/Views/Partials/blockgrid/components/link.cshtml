@@ -10,8 +10,7 @@
     var responsiveMargin = ResponsiveMarginHelper.GetResponsiveMarginClasses(Model!);
 }
 
-<a class="@responsiveMargin" href="@linkUrl" 
-   @(isExternal ? "target=\"_blank\" rel=\"noopener noreferrer\"" : "")
-   title="@linkText">
+<a class=" a-link @responsiveMargin" href="@linkUrl" title="@linkText"
+@(isExternal ? "target=\"_blank\" rel=\"noopener noreferrer\"" : "")>
     @linkText
 </a>
