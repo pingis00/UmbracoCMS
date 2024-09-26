@@ -66,6 +66,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string FontWeight => this.Value<string>(_publishedValueFallback, "fontWeight");
 
 		///<summary>
+		/// H4 Use Custom Font Size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("h4UseCustomFontSize")]
+		public virtual bool H4UseCustomFontSize => this.Value<bool>(_publishedValueFallback, "h4UseCustomFontSize");
+
+		///<summary>
 		/// Headline Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]

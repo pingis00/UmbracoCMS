@@ -314,6 +314,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string ParagraphContent => this.Value<string>(_publishedValueFallback, "paragraphContent");
 
 		///<summary>
+		/// P Use Custom Font Size
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("pUseCustomFontSize")]
+		public virtual bool PUseCustomFontSize => this.Value<bool>(_publishedValueFallback, "pUseCustomFontSize");
+
+		///<summary>
 		/// Small Screen Font Size 
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
