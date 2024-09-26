@@ -16,12 +16,12 @@
 }
 
 
-<section id="@sectionId" 
-        class="@(string.IsNullOrEmpty(backgroundColorClass) ? "" : backgroundColorClass) 
-        @(string.IsNullOrEmpty(sectionBackgroundImage) ? "" : $"section-background-image {showHideImageClasses}")"
-        style="@(string.IsNullOrEmpty(sectionBackgroundImage) ? "" : $"background-image:url('{sectionBackgroundImage}');")">
-
-   <div class="container">
+<section id="@sectionId" class="@backgroundColorClass section-with-bg-image">
+    @if (!string.IsNullOrEmpty(sectionBackgroundImage))
+    {
+        <img src="@sectionBackgroundImage" alt="Background" class="section-bg-image @showHideImageClasses" />
+    }
+    <div class="container section-content">
         @await Html.GetBlockGridItemAreasHtmlAsync(Model!)
     </div>
 </section>
