@@ -1,15 +1,16 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoCMS_SubmissionTask.Views.Helpers
 
 @{
     var linkText = Model?.Content.Value<string>("linkText");
     var linkUrl = Model?.Content.Value<string>("linkUrl");
     var isExternal = Model?.Content.Value<bool>("isExternal") ?? false;
+    var responsiveMargin = ResponsiveMarginHelper.GetResponsiveMarginClasses(Model!);
 }
 
-<a href="@linkUrl" 
-   @(isExternal ? "target=\"_blank\" rel=\"noopener noreferrer\"" : "")
-   title="@linkText">
+<a class=" a-link @responsiveMargin" href="@linkUrl" title="@linkText"
+@(isExternal ? "target=\"_blank\" rel=\"noopener noreferrer\"" : "")>
     @linkText
 </a>

@@ -1,11 +1,30 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters
+@using UmbracoCMS_SubmissionTask.Views.Helpers
+@using Umbraco.Cms.Core.Models.Blocks
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
-@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 
 @{
     var paragraphContent = Model?.Content.Value<string>("paragraphContent") ?? null;
+
+    var fontStyle = Model?.Content.Value<string[]>("fontStyle")?.FirstOrDefault() ?? Model?.Content.Value<string>("fontStyle") ?? "Normal";
+    var fontStyleClass = (fontStyle.Equals("Italic", StringComparison.OrdinalIgnoreCase)) ? "italic" : "normal";
+
+    var textColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("textColor")?.Label.ToLower() ?? null;
+    var textColorClass = (!string.IsNullOrEmpty(textColor) && textColor != "none") ? $"text-color-{textColor}" : "";
+
+    var responsivePadding = ResponsivePaddingHelper.GetResponsivePaddingClasses(Model!);
+    var responsiveMargin = ResponsiveMarginHelper.GetResponsiveMarginClasses(Model!);
+    var fontWeightClass = FontWeightHelper.GetFontWeightClasses(Model!);
+    var fontClassesForParagraph = ResponsiveFontHelper.GetResponsiveFontClasses(Model!, "p");
+    var responsiveTextAlign = ResponsiveTextAlignHelper.GetResponsiveTextAlign(Model!);
+    var widthClasses = WidthHelper.GetWidthClasses(Model!);
 }
 
-@if (!string.IsNullOrEmpty(paragraphContent)) {
-    <p>@paragraphContent</p>
+@if (!string.IsNullOrEmpty(paragraphContent))
+{
+    <p class="paragraph @responsivePadding @responsiveMargin @fontStyleClass @(string.IsNullOrEmpty(textColorClass) ? "" : textColorClass) @fontWeightClass @fontClassesForParagraph @responsiveTextAlign @widthClasses">
+        @paragraphContent
+    </p>
 }

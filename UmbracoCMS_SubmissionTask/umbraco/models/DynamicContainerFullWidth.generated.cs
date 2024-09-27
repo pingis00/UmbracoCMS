@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Paragraph</summary>
-	[PublishedModel("paragraph")]
-	public partial class Paragraph : PublishedElementModel
+	/// <summary>Dynamic Container (full-width)</summary>
+	[PublishedModel("dynamicContainerFullWidth")]
+	public partial class DynamicContainerFullWidth : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		public new const string ModelTypeAlias = "paragraph";
+		public new const string ModelTypeAlias = "dynamicContainerFullWidth";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(publishedSnapshotAccessor, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<Paragraph, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedSnapshotAccessor publishedSnapshotAccessor, Expression<Func<DynamicContainerFullWidth, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(publishedSnapshotAccessor), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public Paragraph(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public DynamicContainerFullWidth(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,36 +50,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Font Style
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("fontStyle")]
-		public virtual string FontStyle => this.Value<string>(_publishedValueFallback, "fontStyle");
-
-		///<summary>
-		/// Font Weight
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("fontWeight")]
-		public virtual string FontWeight => this.Value<string>(_publishedValueFallback, "fontWeight");
-
-		///<summary>
-		/// Large screen
+		/// Large Screen
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("largeScreen")]
 		public virtual string LargeScreen => this.Value<string>(_publishedValueFallback, "largeScreen");
-
-		///<summary>
-		/// Large Screen Font Size
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("largeScreenFontSize")]
-		public virtual string LargeScreenFontSize => this.Value<string>(_publishedValueFallback, "largeScreenFontSize");
 
 		///<summary>
 		/// Large Screen Margin Bottom
@@ -162,14 +138,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string MediumScreen => this.Value<string>(_publishedValueFallback, "mediumScreen");
 
 		///<summary>
-		/// Medium Screen Font Size
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("mediumScreenFontSize")]
-		public virtual string MediumScreenFontSize => this.Value<string>(_publishedValueFallback, "mediumScreenFontSize");
-
-		///<summary>
 		/// Medium Screen Margin Bottom
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -250,14 +218,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string MobileScreen => this.Value<string>(_publishedValueFallback, "mobileScreen");
 
 		///<summary>
-		/// Mobile Screen Font Size
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("mobileScreenFontSize")]
-		public virtual string MobileScreenFontSize => this.Value<string>(_publishedValueFallback, "mobileScreenFontSize");
-
-		///<summary>
 		/// Mobile Screen Margin Bottom
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -330,35 +290,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string MobileScreenTextAlign => this.Value<string>(_publishedValueFallback, "mobileScreenTextAlign");
 
 		///<summary>
-		/// Paragraph Content
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("paragraphContent")]
-		public virtual string ParagraphContent => this.Value<string>(_publishedValueFallback, "paragraphContent");
-
-		///<summary>
-		/// P Use Custom Font Size
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[ImplementPropertyType("pUseCustomFontSize")]
-		public virtual bool PUseCustomFontSize => this.Value<bool>(_publishedValueFallback, "pUseCustomFontSize");
-
-		///<summary>
 		/// Small Screen
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("smallScreen")]
 		public virtual string SmallScreen => this.Value<string>(_publishedValueFallback, "smallScreen");
-
-		///<summary>
-		/// Small Screen Font Size 
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("smallScreenFontSize")]
-		public virtual string SmallScreenFontSize => this.Value<string>(_publishedValueFallback, "smallScreenFontSize");
 
 		///<summary>
 		/// Small Screen Margin Bottom
@@ -433,28 +370,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string SmallScreenTextAlign => this.Value<string>(_publishedValueFallback, "smallScreenTextAlign");
 
 		///<summary>
-		/// Text Color
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("textColor")]
-		public virtual global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor TextColor => this.Value<global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>(_publishedValueFallback, "textColor");
-
-		///<summary>
 		/// XL Screen
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("xlScreen")]
 		public virtual string XlScreen => this.Value<string>(_publishedValueFallback, "xlScreen");
-
-		///<summary>
-		/// XL Screen Font Size
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("xlScreenFontSize")]
-		public virtual string XlScreenFontSize => this.Value<string>(_publishedValueFallback, "xlScreenFontSize");
 
 		///<summary>
 		/// XL Screen Margin Bottom
@@ -535,14 +456,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("xxlScreen")]
 		public virtual string XxlScreen => this.Value<string>(_publishedValueFallback, "xxlScreen");
-
-		///<summary>
-		/// XXL Screen Font Size
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("xxlScreenFontSize")]
-		public virtual string XxlScreenFontSize => this.Value<string>(_publishedValueFallback, "xxlScreenFontSize");
 
 		///<summary>
 		/// XXL Screen Margin Bottom

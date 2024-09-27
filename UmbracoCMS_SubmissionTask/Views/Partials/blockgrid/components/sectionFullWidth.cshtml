@@ -2,25 +2,25 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
+@using UmbracoCMS_SubmissionTask.Views.Helpers
 @{
     var sectionTitle = Model?.Content.Value<string>("sectionTitle") ?? "";
     var sectionId = sectionTitle?.ToString().ToLower().Trim().Replace(" ", "-");
-
-    var spacingTopClass =(Model!.Content.Value<bool>("addSpaceToTop")) ? "spacing-top" : "";
-    var spacingBottomClass =(Model.Content.Value<bool>("addSpaceToBottom")) ? "spacing-bottom" : "";
 
     var sectionBackgroundColorLabel = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("sectionBackgroundColor")?.Label.ToLower() ?? null;
     var backgroundColorClass = (!string.IsNullOrEmpty(sectionBackgroundColorLabel) && sectionBackgroundColorLabel != "none") ? $"custom-bg-{sectionBackgroundColorLabel}" : "";
 
     var sectionBackgroundImage = Model?.Content.Value<IPublishedContent>("sectionBackgroundImage")?.Url() ?? null;
+
+    var responsivePadding = ResponsivePaddingHelper.GetResponsivePaddingClasses(Model!);
+    var responsiveMargin = ResponsiveMarginHelper.GetResponsiveMarginClasses(Model!);
+    var responsiveTextAlign = ResponsiveTextAlignHelper.GetResponsiveTextAlign(Model!);
+    var widthClasses = WidthHelper.GetWidthClasses(Model!);
 }
 
-<section id="@sectionId" class="@spacingTopClass @spacingBottomClass @(string.IsNullOrEmpty(backgroundColorClass) ? "" : backgroundColorClass)">
-
-    @if(!string.IsNullOrEmpty(sectionBackgroundImage))
-    {
-        <img class="background-image" src="@sectionBackgroundImage" alt="@sectionTitle background image" />
-    }
-    
+<section id="@sectionId" 
+        class="@(string.IsNullOrEmpty(backgroundColorClass) ? "" : backgroundColorClass) 
+        @(string.IsNullOrEmpty(sectionBackgroundImage) ? "" : "section-background-image") @responsivePadding @responsiveMargin @responsiveTextAlign @widthClasses"
+        style="@(string.IsNullOrEmpty(sectionBackgroundImage) ? "" : $"background-image:url('{sectionBackgroundImage}');")">
     @await Html.GetBlockGridItemAreasHtmlAsync(Model!)
 </section>

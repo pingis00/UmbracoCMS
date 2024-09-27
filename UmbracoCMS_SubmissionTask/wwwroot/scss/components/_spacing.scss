@@ -1,0 +1,101 @@
+@each $size, $breakpoint in ('mobile': null, 'small': 576px, 'medium': 768px, 'large': 992px, 'xl': 1200px, 'xxl': 1400px) {
+    @each $padding in (none, xs, s, m, l, xl, xxl) {
+        $spacing-value: if($padding == none, 0, if($padding == xs, 5px, if($padding == s, 10px, if($padding == m, 15px, if($padding == l, 20px, if($padding == xl, 40px, if($padding == xxl, 60px, null)))))));
+
+        @if $size == 'mobile' {
+            .p-#{$size}-#{$padding} {
+                padding: $spacing-value !important;
+            }
+
+            .p-t-#{$size}-#{$padding} {
+                padding-top: $spacing-value !important;
+            }
+
+            .p-b-#{$size}-#{$padding} {
+                padding-bottom: $spacing-value !important;
+            }
+
+            .p-l-#{$size}-#{$padding} {
+                padding-left: $spacing-value !important;
+            }
+
+            .p-r-#{$size}-#{$padding} {
+                padding-right: $spacing-value !important;
+            }
+        }
+        @else {
+            @media (min-width: $breakpoint) {
+                .p-#{$size}-#{$padding} {
+                    padding: $spacing-value !important;
+                }
+
+                .p-t-#{$size}-#{$padding} {
+                    padding-top: $spacing-value !important;
+                }
+
+                .p-b-#{$size}-#{$padding} {
+                    padding-bottom: $spacing-value !important;
+                }
+
+                .p-l-#{$size}-#{$padding} {
+                    padding-left: $spacing-value !important;
+                }
+
+                .p-r-#{$size}-#{$padding} {
+                    padding-right: $spacing-value !important;
+                }
+            }
+        }
+    }
+}
+
+@each $size, $breakpoint in ('mobile': null, 'small': 576px, 'medium': 768px, 'large': 992px, 'xl': 1200px, 'xxl': 1400px) {
+    @each $margin in (none, xs, s, m, l, xl, xxl) {
+        $spacing-value: if($margin == none, 0, if($margin == xs, 5px, if($margin == s, 10px, if($margin == m, 15px, if($margin == l, 20px, if($margin == xl, 40px, if($margin == xxl, 60px, null)))))));
+
+        @if $size == 'mobile' {
+            .m-#{$size}-#{$margin} {
+                margin: $spacing-value !important;
+            }
+
+            .m-t-#{$size}-#{$margin} {
+                margin-top: $spacing-value !important;
+            }
+
+            .m-b-#{$size}-#{$margin} {
+                margin-bottom: $spacing-value !important;
+            }
+
+            .m-l-#{$size}-#{$margin} {
+                margin-left: $spacing-value !important;
+            }
+
+            .m-r-#{$size}-#{$margin} {
+                margin-right: $spacing-value !important;
+            }
+        }
+        @else {
+            @media (min-width: $breakpoint) {
+                .m-#{$size}-#{$margin} {
+                    margin: $spacing-value !important;
+                }
+
+                .m-t-#{$size}-#{$margin} {
+                    margin-top: $spacing-value !important;
+                }
+
+                .m-b-#{$size}-#{$margin} {
+                    margin-bottom: $spacing-value !important;
+                }
+
+                .m-l-#{$size}-#{$margin} {
+                    margin-left: $spacing-value !important;
+                }
+
+                .m-r-#{$size}-#{$margin} {
+                    margin-right: $spacing-value !important;
+                }
+            }
+        }
+    }
+}
