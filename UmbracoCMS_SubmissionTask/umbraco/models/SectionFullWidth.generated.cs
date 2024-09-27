@@ -92,6 +92,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual bool DisplayBackgroundImageXxl => this.Value<bool>(_publishedValueFallback, "displayBackgroundImageXxl");
 
 		///<summary>
+		/// Large Screen
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("largeScreen")]
+		public virtual string LargeScreen => this.Value<string>(_publishedValueFallback, "largeScreen");
+
+		///<summary>
 		/// Large Screen Margin Bottom
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -164,6 +172,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string LargeScreenTextAlign => this.Value<string>(_publishedValueFallback, "largeScreenTextAlign");
 
 		///<summary>
+		/// Medium Screen
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mediumScreen")]
+		public virtual string MediumScreen => this.Value<string>(_publishedValueFallback, "mediumScreen");
+
+		///<summary>
 		/// Medium Screen Margin Bottom
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -234,6 +250,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("mediumScreenTextAlign")]
 		public virtual string MediumScreenTextAlign => this.Value<string>(_publishedValueFallback, "mediumScreenTextAlign");
+
+		///<summary>
+		/// Mobile Screen
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mobileScreen")]
+		public virtual string MobileScreen => this.Value<string>(_publishedValueFallback, "mobileScreen");
 
 		///<summary>
 		/// Mobile Screen Margin Bottom
@@ -332,6 +356,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string SectionTitle => this.Value<string>(_publishedValueFallback, "sectionTitle");
 
 		///<summary>
+		/// Small Screen
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("smallScreen")]
+		public virtual string SmallScreen => this.Value<string>(_publishedValueFallback, "smallScreen");
+
+		///<summary>
 		/// Small Screen Margin Bottom
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -404,6 +436,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string SmallScreenTextAlign => this.Value<string>(_publishedValueFallback, "smallScreenTextAlign");
 
 		///<summary>
+		/// XL Screen
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xlScreen")]
+		public virtual string XlScreen => this.Value<string>(_publishedValueFallback, "xlScreen");
+
+		///<summary>
 		/// XL Screen Margin Bottom
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -474,6 +514,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("xlScreenTextAlign")]
 		public virtual string XlScreenTextAlign => this.Value<string>(_publishedValueFallback, "xlScreenTextAlign");
+
+		///<summary>
+		/// XXL Screen
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("xxlScreen")]
+		public virtual string XxlScreen => this.Value<string>(_publishedValueFallback, "xxlScreen");
 
 		///<summary>
 		/// XXL Screen Margin Bottom
