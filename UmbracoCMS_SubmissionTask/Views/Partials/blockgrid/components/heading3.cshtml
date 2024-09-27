@@ -17,10 +17,11 @@
     var fontWeightClass = FontWeightHelper.GetFontWeightClasses(Model!);
     var fontClassesForH1 = ResponsiveFontHelper.GetResponsiveFontClasses(Model!, "h3");
     var responsiveTextAlign = ResponsiveTextAlignHelper.GetResponsiveTextAlign(Model!);
+    var widthClasses = WidthHelper.GetWidthClasses(Model!);
 }
 
 @if (!string.IsNullOrEmpty(headlineContent)) {
-    <h3 class="heading-3 @responsivePadding @responsiveMargin @fontStyleClass @(string.IsNullOrEmpty(textColorClass) ? "" : textColorClass) @fontWeightClass @fontClassesForH1 @responsiveTextAlign">
+    <h3 class="heading-3 @responsivePadding @responsiveMargin @fontStyleClass @(string.IsNullOrEmpty(textColorClass) ? "" : textColorClass) @fontWeightClass @fontClassesForH1 @responsiveTextAlign @widthClasses">
         @headlineContent
     </h3>
 }

@@ -8,7 +8,13 @@ public class FontWeightHelper
     {
         var fontWeight = model?.Content.Value<string[]>("fontWeight")?.FirstOrDefault()
                             ?? model?.Content.Value<string>("fontWeight")
-                            ?? "400 Normal";
+                            ?? "";
+
+        if (string.IsNullOrEmpty(fontWeight) || fontWeight.Equals("default", StringComparison.OrdinalIgnoreCase))
+        {
+            return "";
+        }
+
         return fontWeight.Split(' ')[0] switch
         {
             "300" => "font-weight-300",
@@ -17,7 +23,7 @@ public class FontWeightHelper
             "600" => "font-weight-600",
             "700" => "font-weight-700",
             "800" => "font-weight-800",
-            _ => "font-weight-400"
+            _ => ""
         };
     }
 }

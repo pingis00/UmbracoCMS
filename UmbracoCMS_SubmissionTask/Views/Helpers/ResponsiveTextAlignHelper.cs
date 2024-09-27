@@ -6,9 +6,9 @@ public class ResponsiveTextAlignHelper
 {
     public static string GetResponsiveTextAlign(BlockGridItem model)
     {
-        var mobileTextAlign = model?.Content.Value<string[]>("mobileTextAlign")?.FirstOrDefault()
-                    ?? model?.Content.Value<string>("mobileTextAlign")
-                    ?? "left";
+        var mobileScreenTextAlign = model?.Content.Value<string[]>("mobileScreenTextAlign")?.FirstOrDefault()
+                    ?? model?.Content.Value<string>("mobileScreenTextAlign")
+                    ?? "center";
 
         var smallScreenTextAlign = model?.Content.Value<string[]>("smallScreenTextAlign")?.FirstOrDefault()
                                 ?? model?.Content.Value<string>("smallScreenTextAlign")
@@ -30,13 +30,13 @@ public class ResponsiveTextAlignHelper
                               ?? model?.Content.Value<string>("xxlScreenTextAlign")
                               ?? "left";
 
-        var mobileTextAlignClass = $"text-align-xs-{mobileTextAlign.ToLower()}";
+        var mobileScreenTextAlignClass = $"text-align-xs-{mobileScreenTextAlign.ToLower()}";
         var smallScreenTextAlignClass = $"text-align-sm-{smallScreenTextAlign.ToLower()}";
         var mediumScreenTextAlignClass = $"text-align-md-{mediumScreenTextAlign.ToLower()}";
         var largeScreenTextAlignClass = $"text-align-lg-{largeScreenTextAlign.ToLower()}";
         var xlScreenTextAlignClass = $"text-align-xl-{xlScreenTextAlign.ToLower()}";
         var xxlScreenTextAlignClass = $"text-align-xxl-{xxlScreenTextAlign.ToLower()}";
 
-        return $"{mobileTextAlignClass} {smallScreenTextAlignClass} {mediumScreenTextAlignClass} {largeScreenTextAlignClass} {xlScreenTextAlignClass} {xxlScreenTextAlignClass}";
+        return $"{mobileScreenTextAlignClass} {smallScreenTextAlignClass} {mediumScreenTextAlignClass} {largeScreenTextAlignClass} {xlScreenTextAlignClass} {xxlScreenTextAlignClass}";
     }
 }

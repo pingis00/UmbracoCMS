@@ -14,13 +14,14 @@
 
     var responsivePadding = ResponsivePaddingHelper.GetResponsivePaddingClasses(Model!);
     var responsiveMargin = ResponsiveMarginHelper.GetResponsiveMarginClasses(Model!);
+    var responsiveTextAlign = ResponsiveTextAlignHelper.GetResponsiveTextAlign(Model!);
+    var widthClasses = WidthHelper.GetWidthClasses(Model!);
     var fontWeightClass = FontWeightHelper.GetFontWeightClasses(Model!);
     var fontClassesForH1 = ResponsiveFontHelper.GetResponsiveFontClasses(Model!, "h6");
-    var responsiveTextAlign = ResponsiveTextAlignHelper.GetResponsiveTextAlign(Model!);
 }
 
 @if (!string.IsNullOrEmpty(headlineContent)) {
-    <h6 class="heading-6 @responsivePadding @responsiveMargin @fontStyleClass @(string.IsNullOrEmpty(textColorClass) ? "" : textColorClass) @fontWeightClass @fontClassesForH1 @responsiveTextAlign">
+    <h6 class="heading-6 @responsivePadding @responsiveMargin @fontStyleClass @(string.IsNullOrEmpty(textColorClass) ? "" : textColorClass) @fontWeightClass @fontClassesForH1 @responsiveTextAlign @widthClasses">
         @headlineContent
     </h6>
 }

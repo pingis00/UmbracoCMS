@@ -12,16 +12,20 @@
 
     var sectionBackgroundImage = Model?.Content.Value<IPublishedContent>("sectionBackgroundImage")?.Url() ?? null;
     var showHideImageClasses = DisplayImageHelper.GetDisplayClasses(Model!);
-    
+
+    var responsivePadding = ResponsivePaddingHelper.GetResponsivePaddingClasses(Model!);
+    var responsiveMargin = ResponsiveMarginHelper.GetResponsiveMarginClasses(Model!);
+    var responsiveTextAlign = ResponsiveTextAlignHelper.GetResponsiveTextAlign(Model!);
+    var widthClasses = WidthHelper.GetWidthClasses(Model!);
 }
 
 
-<section id="@sectionId" class="@backgroundColorClass section-with-bg-image">
+<section id="@sectionId" class="@backgroundColorClass section-with-bg-image @responsivePadding @responsiveMargin">
     @if (!string.IsNullOrEmpty(sectionBackgroundImage))
     {
         <img src="@sectionBackgroundImage" alt="Background" class="section-bg-image @showHideImageClasses" />
     }
-    <div class="container section-content">
+    <div class="container section-content @responsiveTextAlign @widthClasses">
         @await Html.GetBlockGridItemAreasHtmlAsync(Model!)
     </div>
 </section>
