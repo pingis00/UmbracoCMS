@@ -19,7 +19,7 @@
     var fontWeightClass = FontWeightHelper.GetFontWeightClasses(Model!);
     var fontClassesForParagraph = ResponsiveFontHelper.GetResponsiveFontClasses(Model!, "p");
     var responsiveTextAlign = ResponsiveTextAlignHelper.GetResponsiveTextAlign(Model!);
-    var widthClasses = WidthHelper.GetWidthClasses(Model!);
+    var widthClasses = WidthHelper.GetResponsiveWidth(Model!);
 }
 
 @if (!string.IsNullOrEmpty(paragraphContent))

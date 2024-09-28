@@ -21,28 +21,38 @@ public class ResponsiveMarginHelper
             };
         }
 
-        string GetMarginClassesForScreenSize(string screenSize, BlockGridItem model)
+        string GetMarginValue(string screenSize, string direction, BlockGridItem model)
         {
-            var marginTop = model?.Content.Value<string>($"{screenSize}ScreenMarginTop") ?? "none";
-            var marginBottom = model?.Content.Value<string>($"{screenSize}ScreenMarginBottom") ?? "none";
-            var marginLeft = model?.Content.Value<string>($"{screenSize}ScreenMarginLeft") ?? "none";
-            var marginRight = model?.Content.Value<string>($"{screenSize}ScreenMarginRight") ?? "none";
-
-            var marginTopClass = GetMarginClass(screenSize, "t", marginTop);
-            var marginBottomClass = GetMarginClass(screenSize, "b", marginBottom);
-            var marginLeftClass = GetMarginClass(screenSize, "l", marginLeft);
-            var marginRightClass = GetMarginClass(screenSize, "r", marginRight);
-
-            return $"{marginTopClass} {marginBottomClass} {marginLeftClass} {marginRightClass}";
+            var value = model?.Content.Value<string>($"{screenSize}ScreenMargin{direction}") ?? "none";
+            var size = value.Split(' ')[0];
+            return size.Equals("none", StringComparison.OrdinalIgnoreCase) ? "" : size;
         }
 
-        var mobileMarginClasses = GetMarginClassesForScreenSize("mobile", model);
-        var smallMarginClasses = GetMarginClassesForScreenSize("small", model);
-        var mediumMarginClasses = GetMarginClassesForScreenSize("medium", model);
-        var largeMarginClasses = GetMarginClassesForScreenSize("large", model);
-        var xlMarginClasses = GetMarginClassesForScreenSize("xl", model);
-        var xxlMarginClasses = GetMarginClassesForScreenSize("xxl", model);
+        string PropagateMargin(string[] screenSizes, string direction, BlockGridItem model)
+        {
+            var marginValues = new Dictionary<string, string>();
+            string lastValue = "";
 
-        return $"{mobileMarginClasses} {smallMarginClasses} {mediumMarginClasses} {largeMarginClasses} {xlMarginClasses} {xxlMarginClasses}";
+            foreach (var screenSize in screenSizes)
+            {
+                var marginValue = GetMarginValue(screenSize, direction, model);
+                if (!string.IsNullOrEmpty(marginValue))
+                {
+                    lastValue = marginValue;
+                }
+                marginValues[screenSize] = lastValue;
+            }
+
+            return string.Join(" ", screenSizes.Select(screenSize => GetMarginClass(screenSize, direction.ToLower(), marginValues[screenSize])));
+        }
+
+        var screenSizes = new[] { "mobile", "small", "medium", "large", "xl", "xxl" };
+
+        var marginTopClasses = PropagateMargin(screenSizes, "Top", model);
+        var marginBottomClasses = PropagateMargin(screenSizes, "Bottom", model);
+        var marginLeftClasses = PropagateMargin(screenSizes, "Left", model);
+        var marginRightClasses = PropagateMargin(screenSizes, "Right", model);
+
+        return $"{marginTopClasses} {marginBottomClasses} {marginLeftClasses} {marginRightClasses}";
     }
 }
