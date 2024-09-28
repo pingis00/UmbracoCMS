@@ -25,31 +25,31 @@
 }
 
 @media (min-width: 576px) {
-    .d-sm-block {
+    .d-small-block {
         display: block !important;
     }
 
-    .d-sm-none {
+    .d-small-none {
         display: none !important;
     }
 }
 
 @media (min-width: 768px) {
-    .d-md-block {
+    .d-medium-block {
         display: block !important;
     }
 
-    .d-md-none {
+    .d-medium-none {
         display: none !important;
     }
 }
 
 @media (min-width: 992px) {
-    .d-lg-block {
+    .d-large-block {
         display: block !important;
     }
 
-    .d-lg-none {
+    .d-large-none {
         display: none !important;
     }
 }

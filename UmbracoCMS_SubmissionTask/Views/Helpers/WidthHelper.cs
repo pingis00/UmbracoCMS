@@ -4,22 +4,47 @@ namespace UmbracoCMS_SubmissionTask.Views.Helpers;
 
 public class WidthHelper
 {
-    public static string GetWidthClasses(BlockGridItem model)
+    public static string GetResponsiveWidth(BlockGridItem? model)
     {
-        var classes = new List<string>();
 
-        var screenSizes = new[] { "mobileScreen", "smallScreen", "mediumScreen", "largeScreen", "xlScreen", "xxlScreen" };
-        foreach (var size in screenSizes)
+        bool useResponsiveWidth = model?.Content.Value<bool>("useResponsiveWidth") ?? false;
+
+        if (!useResponsiveWidth)
         {
-            var width = model?.Content.Value<string>(size) ?? "";
-            if (!string.IsNullOrEmpty(width) && width.ToLower() != "default")
-            {
-                var widthValue = width.Replace("%", "");
-                var className = $"width-{size.Replace("Screen", "").ToLower()}-{widthValue}";
-                classes.Add(className);
-            }
+            return string.Empty;
         }
 
-        return string.Join(" ", classes);
+        string GetWidthClass(string screenSize, string width)
+        {
+            return $"width-{screenSize}-{width.Replace("%", "").ToLower()}";
+        }
+
+        string GetWidthValue(string screenSize, BlockGridItem model)
+        {
+            var value = model.Content.Value<string>($"{screenSize}Screen") ?? "";
+            return value.Equals("none", StringComparison.OrdinalIgnoreCase) ? "" : value;
+        }
+
+        string PropagateWidth(string[] screenSizes, BlockGridItem model)
+        {
+            var widthValues = new Dictionary<string, string>();
+            string lastValue = "";
+
+            foreach (var screenSize in screenSizes)
+            {
+                var widthValue = GetWidthValue(screenSize, model);
+                if (!string.IsNullOrEmpty(widthValue))
+                {
+                    lastValue = widthValue;
+                }
+                widthValues[screenSize] = lastValue;
+            }
+
+            return string.Join(" ", screenSizes.Select(screenSize => GetWidthClass(screenSize, widthValues[screenSize])));
+        }
+
+        var screenSizes = new[] { "mobile", "small", "medium", "large", "xl", "xxl" };
+
+        return PropagateWidth(screenSizes, model!);
     }
 }

@@ -14,12 +14,12 @@ namespace UmbracoCMS_SubmissionTask.Views.Helpers
             var displayBackgroundImageXXL = model?.Content.Value<bool>("displayBackgroundImageXXL") ?? false;
 
             return $@"
-                {(displayBackgroundImageMobile ? "" : "d-none d-sm-block")}
-                {(displayBackgroundImageSmall ? "" : "d-sm-none d-md-block")}
-                {(displayBackgroundImageMedium ? "" : "d-md-none d-lg-block")}
-                {(displayBackgroundImageLarge ? "" : "d-lg-none d-xl-block")}
-                {(displayBackgroundImageXL ? "" : "d-xl-none d-xxl-block")}
-                {(displayBackgroundImageXXL ? "" : "d-xxl-none")}
+                {(displayBackgroundImageMobile ? "d-block" : "d-none")}
+                {(displayBackgroundImageSmall ? "d-small-block" : "d-small-none")}
+                {(displayBackgroundImageMedium ? "d-medium-block" : "d-medium-none")}
+                {(displayBackgroundImageLarge ? "d-large-block" : "d-large-none")}
+                {(displayBackgroundImageXL ? "d-xl-block" : "d-xl-none")}
+                {(displayBackgroundImageXXL ? "d-xxl-block" : "d-xxl-none")}
             ";
         }
     }

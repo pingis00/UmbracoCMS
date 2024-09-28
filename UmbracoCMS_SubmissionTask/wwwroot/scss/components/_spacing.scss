@@ -1,25 +1,25 @@
 @each $size, $breakpoint in ('mobile': null, 'small': 576px, 'medium': 768px, 'large': 992px, 'xl': 1200px, 'xxl': 1400px) {
     @each $padding in (none, xs, s, m, l, xl, xxl) {
-        $spacing-value: if($padding == none, 0, if($padding == xs, 5px, if($padding == s, 10px, if($padding == m, 15px, if($padding == l, 20px, if($padding == xl, 40px, if($padding == xxl, 60px, null)))))));
+        $spacing-value: if($padding == none, 0, if($padding == xs, 10px, if($padding == s, 20px, if($padding == m, 40px, if($padding == l, 60px, if($padding == xl, 80px, if($padding == xxl, 100px, null)))))));
 
         @if $size == 'mobile' {
             .p-#{$size}-#{$padding} {
                 padding: $spacing-value !important;
             }
 
-            .p-t-#{$size}-#{$padding} {
+            .p-top-#{$size}-#{$padding} {
                 padding-top: $spacing-value !important;
             }
 
-            .p-b-#{$size}-#{$padding} {
+            .p-bottom-#{$size}-#{$padding} {
                 padding-bottom: $spacing-value !important;
             }
 
-            .p-l-#{$size}-#{$padding} {
+            .p-left-#{$size}-#{$padding} {
                 padding-left: $spacing-value !important;
             }
 
-            .p-r-#{$size}-#{$padding} {
+            .p-right-#{$size}-#{$padding} {
                 padding-right: $spacing-value !important;
             }
         }
@@ -29,19 +29,19 @@
                     padding: $spacing-value !important;
                 }
 
-                .p-t-#{$size}-#{$padding} {
+                .p-top-#{$size}-#{$padding} {
                     padding-top: $spacing-value !important;
                 }
 
-                .p-b-#{$size}-#{$padding} {
+                .p-bottom-#{$size}-#{$padding} {
                     padding-bottom: $spacing-value !important;
                 }
 
-                .p-l-#{$size}-#{$padding} {
+                .p-left-#{$size}-#{$padding} {
                     padding-left: $spacing-value !important;
                 }
 
-                .p-r-#{$size}-#{$padding} {
+                .p-right-#{$size}-#{$padding} {
                     padding-right: $spacing-value !important;
                 }
             }
@@ -58,19 +58,19 @@
                 margin: $spacing-value !important;
             }
 
-            .m-t-#{$size}-#{$margin} {
+            .m-top-#{$size}-#{$margin} {
                 margin-top: $spacing-value !important;
             }
 
-            .m-b-#{$size}-#{$margin} {
+            .m-bottom-#{$size}-#{$margin} {
                 margin-bottom: $spacing-value !important;
             }
 
-            .m-l-#{$size}-#{$margin} {
+            .m-left-#{$size}-#{$margin} {
                 margin-left: $spacing-value !important;
             }
 
-            .m-r-#{$size}-#{$margin} {
+            .m-right-#{$size}-#{$margin} {
                 margin-right: $spacing-value !important;
             }
         }
@@ -80,19 +80,19 @@
                     margin: $spacing-value !important;
                 }
 
-                .m-t-#{$size}-#{$margin} {
+                .m-top-#{$size}-#{$margin} {
                     margin-top: $spacing-value !important;
                 }
 
-                .m-b-#{$size}-#{$margin} {
+                .m-bottom-#{$size}-#{$margin} {
                     margin-bottom: $spacing-value !important;
                 }
 
-                .m-l-#{$size}-#{$margin} {
+                .m-left-#{$size}-#{$margin} {
                     margin-left: $spacing-value !important;
                 }
 
-                .m-r-#{$size}-#{$margin} {
+                .m-right-#{$size}-#{$margin} {
                     margin-right: $spacing-value !important;
                 }
             }

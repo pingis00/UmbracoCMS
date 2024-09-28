@@ -21,29 +21,39 @@ public class ResponsivePaddingHelper
             };
         }
 
-        string GetPaddingClassesForScreenSize(string screenSize, BlockGridItem model)
+        string GetPaddingValue(string screenSize, string direction, BlockGridItem model)
         {
-            var paddingTop = model?.Content.Value<string>($"{screenSize}ScreenPaddingTop") ?? "none";
-            var paddingBottom = model?.Content.Value<string>($"{screenSize}ScreenPaddingBottom") ?? "none";
-            var paddingLeft = model?.Content.Value<string>($"{screenSize}ScreenPaddingLeft") ?? "none";
-            var paddingRight = model?.Content.Value<string>($"{screenSize}ScreenPaddingRight") ?? "none";
-
-            var paddingTopClass = GetPaddingClass(screenSize, "t", paddingTop);
-            var paddingBottomClass = GetPaddingClass(screenSize, "b", paddingBottom);
-            var paddingLeftClass = GetPaddingClass(screenSize, "l", paddingLeft);
-            var paddingRightClass = GetPaddingClass(screenSize, "r", paddingRight);
-
-            return $"{paddingTopClass} {paddingBottomClass} {paddingLeftClass} {paddingRightClass}";
+            var value = model?.Content.Value<string>($"{screenSize}ScreenPadding{direction}") ?? "none";
+            var size = value.Split(' ')[0];
+            return size.Equals("none", StringComparison.OrdinalIgnoreCase) ? "" : size;
         }
 
-        var mobilePaddingClasses = GetPaddingClassesForScreenSize("mobile", model);
-        var smallPaddingClasses = GetPaddingClassesForScreenSize("small", model);
-        var mediumPaddingClasses = GetPaddingClassesForScreenSize("medium", model);
-        var largePaddingClasses = GetPaddingClassesForScreenSize("large", model);
-        var xlPaddingClasses = GetPaddingClassesForScreenSize("xl", model);
-        var xxlPaddingClasses = GetPaddingClassesForScreenSize("xxl", model);
+        string PropagatePadding(string[] screenSizes, string direction, BlockGridItem model)
+        {
+            var paddingValues = new Dictionary<string, string>();
+            string lastValue = "";
 
-        return $"{mobilePaddingClasses} {smallPaddingClasses} {mediumPaddingClasses} {largePaddingClasses} {xlPaddingClasses} {xxlPaddingClasses}";
+            foreach (var screenSize in screenSizes)
+            {
+                var paddingValue = GetPaddingValue(screenSize, direction, model);
+                if (!string.IsNullOrEmpty(paddingValue))
+                {
+                    lastValue = paddingValue;
+                }
+                paddingValues[screenSize] = lastValue;
+            }
+
+            return string.Join(" ", screenSizes.Select(screenSize => GetPaddingClass(screenSize, direction.ToLower(), paddingValues[screenSize])));
+        }
+
+        var screenSizes = new[] { "mobile", "small", "medium", "large", "xl", "xxl" };
+
+        var paddingTopClasses = PropagatePadding(screenSizes, "Top", model);
+        var paddingBottomClasses = PropagatePadding(screenSizes, "Bottom", model);
+        var paddingLeftClasses = PropagatePadding(screenSizes, "Left", model);
+        var paddingRightClasses = PropagatePadding(screenSizes, "Right", model);
+
+        return $"{paddingTopClasses} {paddingBottomClasses} {paddingLeftClasses} {paddingRightClasses}";
     }
 }
 

@@ -81,7 +81,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string HeadlineContent => this.Value<string>(_publishedValueFallback, "headlineContent");
 
 		///<summary>
-		/// Large screen
+		/// Large Screen
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -439,6 +439,20 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("textColor")]
 		public virtual global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor TextColor => this.Value<global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>(_publishedValueFallback, "textColor");
+
+		///<summary>
+		/// Use Responsive Text Align
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("useResponsiveTextAlign")]
+		public virtual bool UseResponsiveTextAlign => this.Value<bool>(_publishedValueFallback, "useResponsiveTextAlign");
+
+		///<summary>
+		/// Use Responsive Width
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("useResponsiveWidth")]
+		public virtual bool UseResponsiveWidth => this.Value<bool>(_publishedValueFallback, "useResponsiveWidth");
 
 		///<summary>
 		/// XL Screen

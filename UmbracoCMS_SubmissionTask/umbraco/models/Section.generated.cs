@@ -81,15 +81,15 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		/// Display BackgroundImage XL
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[ImplementPropertyType("displayBackgroundImageXl")]
-		public virtual bool DisplayBackgroundImageXl => this.Value<bool>(_publishedValueFallback, "displayBackgroundImageXl");
+		[ImplementPropertyType("displayBackgroundImageXL")]
+		public virtual bool DisplayBackgroundImageXL => this.Value<bool>(_publishedValueFallback, "displayBackgroundImageXL");
 
 		///<summary>
 		/// Display BackgroundImage XXL
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
-		[ImplementPropertyType("displayBackgroundImageXxl")]
-		public virtual bool DisplayBackgroundImageXxl => this.Value<bool>(_publishedValueFallback, "displayBackgroundImageXxl");
+		[ImplementPropertyType("displayBackgroundImageXXL")]
+		public virtual bool DisplayBackgroundImageXxl => this.Value<bool>(_publishedValueFallback, "displayBackgroundImageXXL");
 
 		///<summary>
 		/// Large Screen
@@ -332,7 +332,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string MobileScreenTextAlign => this.Value<string>(_publishedValueFallback, "mobileScreenTextAlign");
 
 		///<summary>
-		/// Section background Color
+		/// Section Background Color
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -340,7 +340,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor SectionBackgroundColor => this.Value<global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>(_publishedValueFallback, "sectionBackgroundColor");
 
 		///<summary>
-		/// Section background Image
+		/// Section Background Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -434,6 +434,20 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("smallScreenTextAlign")]
 		public virtual string SmallScreenTextAlign => this.Value<string>(_publishedValueFallback, "smallScreenTextAlign");
+
+		///<summary>
+		/// Use Responsive Text Align
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("useResponsiveTextAlign")]
+		public virtual bool UseResponsiveTextAlign => this.Value<bool>(_publishedValueFallback, "useResponsiveTextAlign");
+
+		///<summary>
+		/// Use Responsive Width
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("useResponsiveWidth")]
+		public virtual bool UseResponsiveWidth => this.Value<bool>(_publishedValueFallback, "useResponsiveWidth");
 
 		///<summary>
 		/// XL Screen
