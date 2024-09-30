@@ -26,7 +26,8 @@ public static class ResponsiveFontHelper
         string GetFontSizeValue(string screenSize, BlockGridItem model)
         {
             var value = model.Content.Value<string>($"{screenSize}ScreenFontSize") ?? "";
-            return value.Equals("none", StringComparison.OrdinalIgnoreCase) ? "" : value;
+            var size = value.Split(' ')[0];
+            return size.Equals("none", StringComparison.OrdinalIgnoreCase) ? "" : size;
         }
 
         string PropagateFontSize(string[] screenSizes, BlockGridItem model)

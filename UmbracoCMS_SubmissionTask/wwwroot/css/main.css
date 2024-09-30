@@ -1101,6 +1101,34 @@ h6 {
   color: #FFFFFF !important;
 }
 
+.bg-text-color-default {
+  background-color: #535656 !important;
+}
+
+.bg-text-color-dark {
+  background-color: #171717 !important;
+}
+
+.bg-text-color-primary {
+  background-color: #4F5955 !important;
+}
+
+.bg-text-color-secondary {
+  background-color: #D9C3A9 !important;
+}
+
+.bg-text-color-accent {
+  background-color: #F2EDDC !important;
+}
+
+.bg-text-color-gray {
+  background-color: #F7F7F7 !important;
+}
+
+.bg-text-color-light {
+  background-color: #FFFFFF !important;
+}
+
 .custom-bg-dark {
   background-color: var(--color-dark);
   color: var(--color-default);
@@ -4397,6 +4425,64 @@ p {
   .width-xxl-100 {
     width: 100% !important;
   }
+}
+.section-with-bg-image {
+  overflow: visible;
+}
+
+.form-container {
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+}
+.form-container .form-wrapper {
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 768px) {
+  .form-container .form-wrapper {
+    position: absolute;
+    top: -180px;
+    z-index: 10;
+    margin-top: 0;
+  }
+}
+@media (min-width: 992px) {
+  .form-container .form-wrapper {
+    top: -160px;
+  }
+}
+@media (min-width: 1200px) {
+  .form-container .form-wrapper {
+    top: -190px;
+  }
+}
+.form-container .form-wrapper .form-header {
+  background-color: var(--color-primary);
+  padding: 25px;
+  padding-bottom: 15px;
+}
+.form-container .form-wrapper .text {
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 25px;
+}
+.form-container .form-wrapper .form {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+.form-container .form-wrapper .form input, .form-container .form-wrapper .form select {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px 25px;
+  border: 1px solid #EBEBEB;
+}
+.form-container .form-wrapper .form input::placeholder, .form-container .form-wrapper .form select::placeholder {
+  color: #9C9EA6;
+}
+.form-container .form-wrapper .form .form-input-error {
+  display: none;
 }
 header {
   padding: 20px 0;
