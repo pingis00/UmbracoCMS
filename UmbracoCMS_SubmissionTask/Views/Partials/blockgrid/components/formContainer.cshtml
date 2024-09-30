@@ -1,0 +1,54 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters
+@using Umbraco.Cms.Core.Models.Blocks
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+
+@{
+    var headlineContent = Model?.Content.Value<string>("headlineContent") ?? null;
+    var headline = Model?.Content.Value<string>("headline") ?? null;
+    var headlineColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("headlineColor")?.Label.ToLower() ?? null;
+    var headlineColorClass = (!string.IsNullOrEmpty(headlineColor) && headlineColor != "none") ? $"text-color-{headlineColor}" : "";
+    var headlineBackgroundColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("headlineBackgroundColor")?.Label.ToLower() ?? null;
+    var backgroundColorClass = (!string.IsNullOrEmpty(headlineBackgroundColor) && headlineBackgroundColor != "none") ? $"bg-text-color-{headlineBackgroundColor}" : "";
+    
+    var text = Model?.Content.Value<string>("text") ?? null;
+    var textColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("textColor")?.Label.ToLower() ?? null;
+    var textColorClass = (!string.IsNullOrEmpty(textColor) && textColor != "none") ? $"text-color-{textColor}" : "";
+
+    var buttonColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("buttonColor")?.Label.ToLower() ?? null;   
+    var buttonColorClass = (!string.IsNullOrEmpty(buttonColor) && buttonColor != "none") ? $"custom-btn-{buttonColor}" : "btn";
+}
+
+<div class="form-container">
+    <div class="form-wrapper">
+        <div class="form-header">
+            <h3 class="headline @headlineColorClass @backgroundColorClass">@headline</h3>
+        </div>
+
+        <p class="text @textColorClass">@text</p>
+        @using (Html.BeginUmbracoForm("HandleRequestCallBack", "FormSurface", FormMethod.Post))
+        {
+            <div class="form">
+                <div class="form-input-group">
+                    <input type="text" id="Name" name="Name" placeholder="Name" class="form-input" required />
+                    <span class="form-input-error">You must enter your name</span>
+                </div>
+                <div class="form-input-group">
+                    <input type="email" id="email" name="email" placeholder="Email address" class="form-input" required />
+                    <span class="form-input-error">You must enter an e-mail address</span>
+                </div>
+                <div class="form-input-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone" class="form-input" required />
+                    <span class="form-input-error">You must enter a phone number</span>
+                </div>
+                <select name="service">
+                    <option value="financial-consulting">Financial consulting</option>
+                </select>
+                <button type="submit" class="@buttonColorClass btn-submit">Submit</button>
+            </div>
+
+        }
+    </div>
+
+</div>
