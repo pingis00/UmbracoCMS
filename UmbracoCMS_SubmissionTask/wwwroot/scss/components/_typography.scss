@@ -6,22 +6,27 @@
 
 h1 {
     @include heading(40px, null, 58px, 70px, null);
+    margin: 0;
 }
 
 h2 {
     @include heading(26px, 32px, null, 40px, null);
+    margin: 0;
 }
 
 h3 {
     @include heading(30px);
+    margin: 0;
 }
 
 h4 {
     @include heading(22px);
+    margin: 0;
 }
 
 h5 {
     @include heading(18px);
+    margin: 0;
 
     &.content-heading {
         @include content-heading(18px);
@@ -30,6 +35,7 @@ h5 {
 
 h6 {
     @include heading(14px);
+    margin: 0;
 }
 
 p {
@@ -58,7 +64,7 @@ p {
 }
 
 @each $size, $breakpoint in ('mobile': null, 'small': 576px, 'medium': 768px, 'large': 992px, 'xl': 1200px, 'xxl': 1400px) {
-    @each $element, $sizes in ( 'p': (xs: 10px, s: 12px, m: 14px, l: 16px, xl: 18px, xxl: 20px), 'h1': (xs: 32px, s: 40px, m: 48px, l: 58px, xl: 70px, xxl: 80px), 'h2': (xs: 22px, s: 26px, m: 32px, l: 40px, xl: 48px, xxl: 58px), 'h3': (xs: 18px, s: 20px, m: 24px, l: 30px, xl: 36px, xxl: 40px), 'h4': (xs: 16px, s: 18px, m: 22px, l: 26px, xl: 30px, xxl: 34px), 'h5': (xs: 14px, s: 16px, m: 18px, l: 22px, xl: 26px, xxl: 30px), 'h6': (xs: 12px, s: 14px, m: 16px, l: 18px, xl: 20px, xxl: 24px) ) {
+    @each $element, $sizes in ( 'p': (xs: 10px, s: 12px, m: 14px, l: 16px, xl: 18px, xxl: 20px), 'h1': (xs: 32px, s: 40px, m: 48px, l: 58px, xl: 70px, xxl: 80px), 'h2': (xs: 22px, s: 26px, m: 32px, l: 40px, xl: 48px, xxl: 58px, xxxl: 100px), 'h3': (xs: 18px, s: 20px, m: 24px, l: 30px, xl: 36px, xxl: 40px), 'h4': (xs: 16px, s: 18px, m: 22px, l: 26px, xl: 30px, xxl: 34px), 'h5': (xs: 14px, s: 16px, m: 18px, l: 22px, xl: 26px, xxl: 30px), 'h6': (xs: 12px, s: 14px, m: 16px, l: 18px, xl: 20px, xxl: 24px) ) {
         @each $font-size, $value in $sizes {
             @if $size == 'mobile' {
                 .#{$element}-font-size-mobile-#{$font-size} {

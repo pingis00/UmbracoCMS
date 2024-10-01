@@ -1,0 +1,40 @@
+.partners {
+    padding-bottom: 40px;
+
+    .container {
+
+        .image-slider {
+
+
+            .slides {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                align-items: center;
+
+                @include md {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                @include lg {
+                    grid-template-columns: repeat(6, 1fr);
+                }
+
+                .slide-item {
+
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                        display: block;
+                        margin: 0 auto;
+                        transition: transform 0.2s ease-in-out;
+                    }
+
+                    &:hover img {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+}
