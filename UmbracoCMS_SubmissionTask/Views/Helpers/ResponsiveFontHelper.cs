@@ -50,6 +50,6 @@ public static class ResponsiveFontHelper
 
         var screenSizes = new[] { "mobile", "small", "medium", "large", "xl", "xxl" };
 
-        return PropagateFontSize(screenSizes, model);
+        return PropagateFontSize(screenSizes, model!);
     }
 }

@@ -1,12 +1,8 @@
 @each $size, $breakpoint in ('mobile': null, 'small': 576px, 'medium': 768px, 'large': 992px, 'xl': 1200px, 'xxl': 1400px) {
-    @each $padding in (none, xs, s, m, l, xl, xxl) {
-        $spacing-value: if($padding == none, 0, if($padding == xs, 10px, if($padding == s, 20px, if($padding == m, 40px, if($padding == l, 60px, if($padding == xl, 80px, if($padding == xxl, 100px, null)))))));
+    @each $padding in (xs, s, m, l, xl, xxl) {
+        $spacing-value: if($padding == xs, 10px, if($padding == s, 20px, if($padding == m, 40px, if($padding == l, 60px, if($padding == xl, 80px, if($padding == xxl, 100px, null))))));
 
         @if $size == 'mobile' {
-            .p-#{$size}-#{$padding} {
-                padding: $spacing-value !important;
-            }
-
             .p-top-#{$size}-#{$padding} {
                 padding-top: $spacing-value !important;
             }
@@ -25,10 +21,6 @@
         }
         @else {
             @media (min-width: $breakpoint) {
-                .p-#{$size}-#{$padding} {
-                    padding: $spacing-value !important;
-                }
-
                 .p-top-#{$size}-#{$padding} {
                     padding-top: $spacing-value !important;
                 }
@@ -50,51 +42,60 @@
 }
 
 @each $size, $breakpoint in ('mobile': null, 'small': 576px, 'medium': 768px, 'large': 992px, 'xl': 1200px, 'xxl': 1400px) {
-    @each $margin in (none, xs, s, m, l, xl, xxl) {
-        $spacing-value: if($margin == none, 0, if($margin == xs, 5px, if($margin == s, 10px, if($margin == m, 15px, if($margin == l, 20px, if($margin == xl, 40px, if($margin == xxl, 60px, null)))))));
+    @each $margin in (xs, s, m, l, xl, xxl) {
+        $spacing-value: if($margin == xs, 5px, if($margin == s, 10px, if($margin == m, 15px, if($margin == l, 20px, if($margin == xl, 40px, if($margin == xxl, 60px, null))))));
 
         @if $size == 'mobile' {
-            .m-#{$size}-#{$margin} {
-                margin: $spacing-value !important;
-            }
-
             .m-top-#{$size}-#{$margin} {
-                margin-top: $spacing-value !important;
+                margin-top: $spacing-value;
             }
 
             .m-bottom-#{$size}-#{$margin} {
-                margin-bottom: $spacing-value !important;
+                margin-bottom: $spacing-value;
             }
 
             .m-left-#{$size}-#{$margin} {
-                margin-left: $spacing-value !important;
+                margin-left: $spacing-value;
             }
 
             .m-right-#{$size}-#{$margin} {
-                margin-right: $spacing-value !important;
+                margin-right: $spacing-value;
             }
         }
         @else {
             @media (min-width: $breakpoint) {
-                .m-#{$size}-#{$margin} {
-                    margin: $spacing-value !important;
-                }
-
                 .m-top-#{$size}-#{$margin} {
-                    margin-top: $spacing-value !important;
+                    margin-top: $spacing-value;
                 }
 
                 .m-bottom-#{$size}-#{$margin} {
-                    margin-bottom: $spacing-value !important;
+                    margin-bottom: $spacing-value;
                 }
 
                 .m-left-#{$size}-#{$margin} {
-                    margin-left: $spacing-value !important;
+                    margin-left: $spacing-value;
                 }
 
                 .m-right-#{$size}-#{$margin} {
-                    margin-right: $spacing-value !important;
+                    margin-right: $spacing-value;
                 }
+            }
+        }
+    }
+}
+
+@each $size, $breakpoint in ('mobile': null, 'small': 576px, 'medium': 768px, 'large': 992px, 'xl': 1200px, 'xxl': 1400px) {
+    @if $size == 'mobile' {
+        .m-#{$size}-auto {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    }
+    @else {
+        @media (min-width: $breakpoint) {
+            .m-#{$size}-auto {
+                margin-left: auto !important;
+                margin-right: auto !important;
             }
         }
     }

@@ -11,11 +11,12 @@
     var buttonLinkColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("buttonLinkColor")?.Label.ToLower() ?? null;   
     var buttonColorClass = (!string.IsNullOrEmpty(buttonLinkColor) && buttonLinkColor != "none") ? $"custom-btn-{buttonLinkColor}" : "btn";
     var responsiveMargin = ResponsiveMarginHelper.GetResponsiveMarginClasses(Model!);
+    var responsivePadding = ResponsivePaddingHelper.GetResponsivePaddingClasses(Model!);
 }
 
 @if(!string.IsNullOrEmpty(buttonLinkColor))
 {
-    <a href="@buttonLinkUrl" title="@buttonLinkText" class="button @buttonColorClass @responsiveMargin">@buttonLinkText</a>
+    <a href="@buttonLinkUrl" title="@buttonLinkText" class="button @buttonColorClass @responsiveMargin @responsivePadding">@buttonLinkText</a>
 }
 else 
 {

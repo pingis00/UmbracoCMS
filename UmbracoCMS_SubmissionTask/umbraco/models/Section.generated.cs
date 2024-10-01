@@ -348,6 +348,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops SectionBackgroundImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "sectionBackgroundImage");
 
 		///<summary>
+		/// Section background Image Inside Container
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("sectionBackgroundImageInsideContainer")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops SectionBackgroundImageInsideContainer => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "sectionBackgroundImageInsideContainer");
+
+		///<summary>
 		/// Section Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -434,6 +442,20 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("smallScreenTextAlign")]
 		public virtual string SmallScreenTextAlign => this.Value<string>(_publishedValueFallback, "smallScreenTextAlign");
+
+		///<summary>
+		/// Use Custom Margins
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("useCustomMargins")]
+		public virtual bool UseCustomMargins => this.Value<bool>(_publishedValueFallback, "useCustomMargins");
+
+		///<summary>
+		/// Use Custom Padding
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("useCustomPadding")]
+		public virtual bool UseCustomPadding => this.Value<bool>(_publishedValueFallback, "useCustomPadding");
 
 		///<summary>
 		/// Use Responsive Text Align
