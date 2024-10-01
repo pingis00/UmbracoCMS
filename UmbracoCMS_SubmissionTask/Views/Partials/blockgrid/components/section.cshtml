@@ -7,10 +7,14 @@
     var sectionTitle = Model?.Content.Value<string>("sectionTitle") ?? "";
     var sectionId = sectionTitle?.ToString().ToLower().Trim().Replace(" ", "-");
 
+    var useGradientBackground = Model?.Content.Value<bool>("useGradientBackground") ?? false;
     var sectionBackgroundColorLabel = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("sectionBackgroundColor")?.Label.ToLower() ?? null;
     var backgroundColorClass = (!string.IsNullOrEmpty(sectionBackgroundColorLabel) && sectionBackgroundColorLabel != "none") ? $"custom-bg-{sectionBackgroundColorLabel}" : "";
 
+    var gradientClasses = useGradientBackground ? GradientHelper.GetGradientClasses(Model!) : "";
+
     var sectionBackgroundImage = Model?.Content.Value<IPublishedContent>("sectionBackgroundImage")?.Url() ?? null;
+    var sectionBackgroundImageInsideContainer = Model?.Content.Value<IPublishedContent>("sectionBackgroundImageInsideContainer")?.Url() ?? null;
     var showHideImageClasses = DisplayImageHelper.GetDisplayClasses(Model!);
 
     var responsivePadding = ResponsivePaddingHelper.GetResponsivePaddingClasses(Model!);
@@ -20,12 +24,16 @@
 }
 
 
-<section id="@sectionId" class="@backgroundColorClass section-with-bg-image @responsivePadding @responsiveMargin">
+<section id="@sectionId" class="section-with-bg-image @backgroundColorClass @gradientClasses @responsivePadding @responsiveMargin">
     @if (!string.IsNullOrEmpty(sectionBackgroundImage))
     {
         <img src="@sectionBackgroundImage" alt="Background" class="section-bg-image @showHideImageClasses" />
     }
     <div class="container section-content @responsiveTextAlign @widthClasses">
+        @if (!string.IsNullOrEmpty(sectionBackgroundImageInsideContainer))
+        {
+            <img src="@sectionBackgroundImageInsideContainer" alt="Background Inside Container" class="container-bg-image" />
+        }
         @await Html.GetBlockGridItemAreasHtmlAsync(Model!)
     </div>
 </section>
