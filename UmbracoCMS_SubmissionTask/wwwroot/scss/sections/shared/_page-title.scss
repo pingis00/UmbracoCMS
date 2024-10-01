@@ -1,5 +1,25 @@
 .page-title {
     padding: 75px 0;
+    position: relative;
+
+    .background-image {
+        display: none;
+        position: absolute;
+
+        @include xl {
+            display: block;
+        }
+    }
+
+    .bg-image-1 {
+        bottom: 0;
+        left: 0;
+    }
+
+    .bg-image-2 {
+        top: 0;
+        right: 0;
+    }
 
     .container {
 

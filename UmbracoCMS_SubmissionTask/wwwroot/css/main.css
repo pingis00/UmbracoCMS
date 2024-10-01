@@ -17198,6 +17198,24 @@ header .container .hide {
 
 .page-title {
   padding: 75px 0;
+  position: relative;
+}
+.page-title .background-image {
+  display: none;
+  position: absolute;
+}
+@media (min-width: 1200px) {
+  .page-title .background-image {
+    display: block;
+  }
+}
+.page-title .bg-image-1 {
+  bottom: 0;
+  left: 0;
+}
+.page-title .bg-image-2 {
+  top: 0;
+  right: 0;
 }
 .page-title .container h2 {
   text-align: center;
