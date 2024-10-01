@@ -1,12 +1,16 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoCMS_SubmissionTask.Views.Helpers
 
 @{
     var selectedImage = Model?.Content.Value<IPublishedContent>("selectedImage")?.Url() ?? null;
     var imageDescription = Model?.Content.Value<string>("imageDescription") ?? "";
+    var responsivePadding = ResponsivePaddingHelper.GetResponsivePaddingClasses(Model!);
+    var responsiveMargin = ResponsiveMarginHelper.GetResponsiveMarginClasses(Model!);
+    var widthClasses = WidthHelper.GetResponsiveWidth(Model!);
 }
 
 @if (!string.IsNullOrEmpty(selectedImage)) {
-    <img src="@selectedImage" alt="@imageDescription"/>
+    <img src="@selectedImage" alt="@imageDescription" class="image @responsivePadding @responsiveMargin @widthClasses"/>
 }

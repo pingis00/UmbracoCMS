@@ -8,16 +8,30 @@ public class ResponsiveMarginHelper
     {
         string GetMarginClass(string screenSize, string direction, string margin)
         {
+            if (model == null || model.Content == null)
+            {
+                return string.Empty;
+            }
+
+            bool useCustomMargins = model?.Content.Value<bool>("useCustomMargins") ?? false;
+
+            if (!useCustomMargins)
+            {
+                return string.Empty;
+            }
+
+            if (string.IsNullOrEmpty(margin) || margin.Equals("none", StringComparison.OrdinalIgnoreCase))
+                return string.Empty;
+
             return margin?.ToLower() switch
             {
-                "none" => $"m-{direction}-{screenSize}-none",
                 "xs" => $"m-{direction}-{screenSize}-xs",
                 "s" => $"m-{direction}-{screenSize}-s",
                 "m" => $"m-{direction}-{screenSize}-m",
                 "l" => $"m-{direction}-{screenSize}-l",
                 "xl" => $"m-{direction}-{screenSize}-xl",
                 "xxl" => $"m-{direction}-{screenSize}-xxl",
-                _ => $"m-{direction}-{screenSize}-none"
+                _ => string.Empty
             };
         }
 
@@ -43,7 +57,9 @@ public class ResponsiveMarginHelper
                 marginValues[screenSize] = lastValue;
             }
 
-            return string.Join(" ", screenSizes.Select(screenSize => GetMarginClass(screenSize, direction.ToLower(), marginValues[screenSize])));
+            return string.Join(" ", screenSizes
+                .Select(screenSize => GetMarginClass(screenSize, direction.ToLower(), marginValues[screenSize]))
+                .Where(className => !string.IsNullOrEmpty(className)));
         }
 
         var screenSizes = new[] { "mobile", "small", "medium", "large", "xl", "xxl" };

@@ -11,6 +11,7 @@
     var backgroundColorClass = (!string.IsNullOrEmpty(sectionBackgroundColorLabel) && sectionBackgroundColorLabel != "none") ? $"custom-bg-{sectionBackgroundColorLabel}" : "";
 
     var sectionBackgroundImage = Model?.Content.Value<IPublishedContent>("sectionBackgroundImage")?.Url() ?? null;
+    var sectionBackgroundImageInsideContainer = Model?.Content.Value<IPublishedContent>("sectionBackgroundImageInsideContainer")?.Url() ?? null;
     var showHideImageClasses = DisplayImageHelper.GetDisplayClasses(Model!);
 
     var responsivePadding = ResponsivePaddingHelper.GetResponsivePaddingClasses(Model!);
@@ -26,6 +27,10 @@
         <img src="@sectionBackgroundImage" alt="Background" class="section-bg-image @showHideImageClasses" />
     }
     <div class="container section-content @responsiveTextAlign @widthClasses">
+        @if (!string.IsNullOrEmpty(sectionBackgroundImageInsideContainer))
+        {
+            <img src="@sectionBackgroundImageInsideContainer" alt="Background Inside Container" class="container-bg-image" />
+        }
         @await Html.GetBlockGridItemAreasHtmlAsync(Model!)
     </div>
 </section>

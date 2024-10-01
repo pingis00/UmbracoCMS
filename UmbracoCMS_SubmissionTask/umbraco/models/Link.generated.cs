@@ -89,6 +89,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string LargeScreenMarginTop => this.Value<string>(_publishedValueFallback, "largeScreenMarginTop");
 
 		///<summary>
+		/// Link Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("linkColor")]
+		public virtual global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor LinkColor => this.Value<global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>(_publishedValueFallback, "linkColor");
+
+		///<summary>
 		/// Link Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -199,6 +207,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("smallScreenMarginTop")]
 		public virtual string SmallScreenMarginTop => this.Value<string>(_publishedValueFallback, "smallScreenMarginTop");
+
+		///<summary>
+		/// Use Custom Margins
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("useCustomMargins")]
+		public virtual bool UseCustomMargins => this.Value<bool>(_publishedValueFallback, "useCustomMargins");
 
 		///<summary>
 		/// XL Screen Margin Bottom
