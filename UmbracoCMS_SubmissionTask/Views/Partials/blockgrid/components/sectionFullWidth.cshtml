@@ -18,7 +18,7 @@
     var widthClasses = WidthHelper.GetResponsiveWidth(Model!);
 }
 
-<section id="@sectionId" 
+<section id="@sectionId"
         class="@(string.IsNullOrEmpty(backgroundColorClass) ? "" : backgroundColorClass) 
         @(string.IsNullOrEmpty(sectionBackgroundImage) ? "" : "section-background-image") @responsivePadding @responsiveMargin @responsiveTextAlign @widthClasses"
         style="@(string.IsNullOrEmpty(sectionBackgroundImage) ? "" : $"background-image:url('{sectionBackgroundImage}');")">
