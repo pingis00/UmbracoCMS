@@ -25,6 +25,6 @@
 @if (!string.IsNullOrEmpty(paragraphContent))
 {
     <p class="paragraph @responsivePadding @responsiveMargin @fontStyleClass @(string.IsNullOrEmpty(textColorClass) ? "" : textColorClass) @fontWeightClass @fontClassesForParagraph @responsiveTextAlign @widthClasses">
-        @paragraphContent
+        @Html.Raw(paragraphContent)
     </p>
 }

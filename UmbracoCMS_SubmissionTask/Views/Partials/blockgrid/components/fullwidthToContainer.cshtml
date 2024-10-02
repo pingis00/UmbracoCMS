@@ -10,6 +10,6 @@
     var widthClasses = WidthHelper.GetResponsiveWidth(Model!);
 }
 
-<div class="container @responsivePadding @responsiveMargin @responsiveTextAlign @widthClasses">
+<div class="fullwidth-to-container @responsivePadding @responsiveMargin @responsiveTextAlign @widthClasses">
     @await Html.GetBlockGridItemAreasHtmlAsync(Model)
 </div>

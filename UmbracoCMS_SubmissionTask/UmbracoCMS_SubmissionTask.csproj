@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\scss\sections\Home\" />
+    <Folder Include="wwwroot\scss\sections\About Us\" />
   </ItemGroup>
 
   <PropertyGroup>

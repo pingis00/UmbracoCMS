@@ -1,0 +1,35 @@
+.fullwidth-to-container {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include sm {
+        margin-left: calc((100vw - 540px) / 2);
+        margin-right: calc((100vw - 540px) / 2);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include md {
+        margin-left: calc((100vw - 720px) / 2);
+        margin-right: calc((100vw - 720px) / 6);
+        max-width: 100%;
+    }
+
+    @include lg {
+        margin-left: calc((100vw - 960px) / 2);
+        margin-right: calc((100vw - 960px) / 2);
+        max-width: 100%;
+    }
+
+    @include xl {
+        margin-left: calc((100vw - 1140px) / 2);
+        margin-right: calc((100vw - 1140px) / 2);
+        max-width: 100%;
+    }
+
+    @include xxl {
+        margin-left: calc((100vw - 1320px) / 2);
+        margin-right: calc((100vw - 1320px) / 10);
+        max-width: 100%;
+    }
+}
