@@ -1,0 +1,77 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var settings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "settingsPage") ?? null;
+    var officeLocation = settings?.Value<string>("officeLocation") ?? "";
+    var officePhoneNumber = settings?.Value<string>("officePhoneNumber") ?? "";
+    var officeEmailAddress = settings?.Value<string>("officeEmailAddress") ?? "";
+
+    var projectContactSettings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "projectContactSettings") ?? null;
+
+    var sectionBackgroundColorLabel = projectContactSettings?.Value<ColorPickerValueConverter.PickedColor>("sectionBackgroundColor")?.Label.ToLower() ?? null;
+    var backgroundColorClass = (!string.IsNullOrEmpty(sectionBackgroundColorLabel) && sectionBackgroundColorLabel != "none") 
+        ? $"custom-bg-{sectionBackgroundColorLabel}" : "";
+
+    var backgroundImage1 = projectContactSettings?.Value<IPublishedContent>("sectionBackgroundImage1")?.Url() ?? "";
+    var backgroundImage2 = projectContactSettings?.Value<IPublishedContent>("sectionBackgroundImage2")?.Url() ?? "";
+    var sectionImage = projectContactSettings?.Value<IPublishedContent>("sectionImage")?.Url() ?? "";
+    var headline = projectContactSettings?.Value<string>("headline") ?? "";
+    
+    var officeLocationHeadline = projectContactSettings?.Value<string>("officeLocationHeadline") ?? "";
+    var iconForLocation = projectContactSettings?.Value<string>("officeLocationIcon") ?? "";
+    var officeLocationIconColor = projectContactSettings?.Value<ColorPickerValueConverter.PickedColor>("officeLocationIconColor")?.Label.ToLower() ?? null;
+    var iconColorClassForLocation = (!string.IsNullOrEmpty(officeLocationIconColor) && officeLocationIconColor != "none") 
+        ? $"text-color-{officeLocationIconColor}" : "";
+
+    var phoneHeadline = projectContactSettings?.Value<string>("phoneHeadline") ?? "";
+    var iconForPhone = projectContactSettings?.Value<string>("phoneIcon") ?? "";
+    var phoneIconColor = projectContactSettings?.Value<ColorPickerValueConverter.PickedColor>("phoneIconColor")?.Label.ToLower() ?? null;
+    var iconColorClassForPhone = (!string.IsNullOrEmpty(phoneIconColor) && phoneIconColor != "none") 
+        ? $"text-color-{phoneIconColor}" : "";
+
+    var eMailHeadline = projectContactSettings?.Value<string>("eMailHeadline") ?? "";
+    var iconForEmail = projectContactSettings?.Value<string>("emailIcon") ?? "";
+    var eMailIconColor = projectContactSettings?.Value<ColorPickerValueConverter.PickedColor>("eMailIconColor")?.Label.ToLower() ?? null;
+    var iconColorClassForEmail = (!string.IsNullOrEmpty(eMailIconColor) && eMailIconColor != "none") 
+        ? $"text-color-{eMailIconColor}" : "";
+}
+
+<div class="project-contact-section @backgroundColorClass">
+    <div class="container">
+        <div class="image-side">
+            @if (!string.IsNullOrEmpty(backgroundImage1))
+            {
+                <img src="@backgroundImage1" alt="Background" class="background-image-1" />
+            }
+            @if (!string.IsNullOrEmpty(backgroundImage2))
+            {
+                <img src="@backgroundImage2" alt="Background" class="background-image-2" />
+            }
+            @if (!string.IsNullOrEmpty(sectionImage))
+            {
+                <img src="@sectionImage" alt="Project Image" class="project-image" />
+            }
+        </div>
+        <div class="contact-info">
+        <h2>@headline</h2>
+            <ul>
+                <li>
+                    <h6 class="content-headline"><i class="@iconForLocation @iconColorClassForLocation"></i>@officeLocationHeadline</h6>
+                    <p>@officeLocation</p>
+                </li>
+                <li>
+                    <h6 class="content-headline"><i class="@iconForPhone @iconColorClassForPhone"></i>@phoneHeadline</h6>
+                    <p>@officePhoneNumber</p>
+                </li>
+                <li>
+                    <h6 class="content-headline"><i class="@iconForEmail @iconColorClassForEmail"></i>@eMailHeadline</h6>
+                    <p>@officeEmailAddress</p>
+                </li>
+            </ul>
+        </div>
+    </div> 
+</div>
