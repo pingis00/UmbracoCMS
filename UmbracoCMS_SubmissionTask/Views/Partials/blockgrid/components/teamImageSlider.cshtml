@@ -1,0 +1,65 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var slidesBig = Model.Content.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("slidesBig");
+    var slidesSmall = Model.Content.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("slidesSmall");
+    var mainTitle = Model.Content.Value<string>("mainTitle");
+    var subTitle = Model.Content.Value<string>("subTitle");
+}
+
+<div class="team-slider">
+    <div class="container">
+        
+        @if (!string.IsNullOrEmpty(mainTitle))
+        {
+            <h6 class="main-title">@mainTitle</h6>
+        }
+
+        @if (!string.IsNullOrEmpty(subTitle))
+        {
+            <h2 class="sub-title">@subTitle</h2>
+        }
+
+        @if (slidesBig != null)
+        {
+            <div class="slides-big">
+                @foreach (var item in slidesBig)
+                {
+                    var selectedImage = item?.Content.Value<IPublishedContent>("selectedImage")?.Url();
+                    var teamMemberName = item?.Content.Value<string>("teamMemberName") ?? "Team Member";
+                    var jobTitle = item?.Content.Value<string>("jobTitle") ?? "Job Title";
+
+                    <div class="slide-item">
+                        <img class="team-member-image" src="@selectedImage" alt="@teamMemberName" />
+                        <div class="slide-info">
+                            <h5 class="team-member-name">@teamMemberName</h5>
+                            <p class="job-title">@jobTitle</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+        @if (slidesSmall != null)
+        {
+            <div class="slides-small">
+                @foreach (var item in slidesSmall)
+                {
+                    var selectedImage = item?.Content.Value<IPublishedContent>("selectedImage")?.Url();
+                    var teamMemberName = item?.Content.Value<string>("teamMemberName") ?? "Team Member";
+                    var jobTitle = item?.Content.Value<string>("jobTitle") ?? "Job Title";
+
+                    <div class="slide-item">
+                        <img class="team-member-image" src="@selectedImage" alt="@teamMemberName" />
+                        <div class="slide-info">
+                            <h5 class="team-member-name">@teamMemberName</h5>
+                            <p class="job-title">@jobTitle</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
