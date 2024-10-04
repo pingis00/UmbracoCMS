@@ -1154,10 +1154,6 @@ h6 {
   color: var(--color-default);
 }
 
-.custom-light {
-  background-color: var(--color-light);
-}
-
 .custom-dark {
   background-color: var(--color-dark);
 }
@@ -17128,22 +17124,22 @@ p {
   display: flex;
   flex-direction: column;
 }
-.form-container-help .form-wrapper .form input, .form-container-help .form-wrapper .form select {
+.form-container-help .form-wrapper .form input {
   width: 100%;
   padding: 15px 25px;
   border: 1px solid #EBEBEB;
   border-radius: 4px;
 }
-.form-container-help .form-wrapper .form input::placeholder, .form-container-help .form-wrapper .form select::placeholder {
+.form-container-help .form-wrapper .form input::placeholder {
   color: #9C9EA6;
 }
 .form-container-help .form-wrapper .form .form-input-error {
   display: none;
 }
+
 .form-container-question {
   width: 100%;
   margin-top: 30px;
-  position: relative;
 }
 .form-container-question .form-wrapper .form-header {
   padding: 25px;
@@ -17159,6 +17155,7 @@ p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+    align-items: start;
   }
 }
 .form-container-question .form-wrapper .form .form-input-group {

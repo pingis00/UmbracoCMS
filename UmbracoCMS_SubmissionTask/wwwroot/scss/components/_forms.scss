@@ -75,9 +75,6 @@
     .form-wrapper {
         padding: 30px 20px;
 
-
-
-
         .form-header {
 
             .headline {
@@ -101,7 +98,7 @@
             flex-direction: column;
 
 
-            input, select {
+            input {
                 width: 100%;
                 padding: 15px 25px;
                 border: 1px solid #EBEBEB;
@@ -115,9 +112,6 @@
             .form-input-error {
                 display: none;
             }
-
-            .btn-submit {
-            }
         }
     }
 }
@@ -125,7 +119,6 @@
 .form-container-question {
     width: 100%;
     margin-top: 30px;
-    position: relative;
 
 
     .form-wrapper {
@@ -147,6 +140,7 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 grid-gap: 20px;
+                align-items: start;
             }
 
 
