@@ -1,0 +1,15 @@
+.bullet-list {
+    list-style-type: disc;
+    padding-left: 20px;
+
+    li {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #535656;
+        font-weight: 400;
+        
+        &::marker {
+            color: #D9C3A9;
+        }
+    }
+}

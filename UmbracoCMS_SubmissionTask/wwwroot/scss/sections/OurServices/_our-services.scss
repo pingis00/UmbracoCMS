@@ -1,0 +1,183 @@
+#our-services {
+    padding: 40px 0;
+
+    .container {
+        padding: 0 15px;
+
+        .headline {
+            text-align: center;
+            margin-bottom: 30px;
+
+            h6 {
+                margin-bottom: 5px;
+            }
+
+            .title {
+                font-size: 22px;
+
+                @include sm {
+                    width: 70%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    font-size: 24px;
+                }
+
+                @include md {
+                    width: 60%;
+                    font-size: 28px;
+                }
+
+                @include lg {
+                    width: 50%;
+                    font-size: 32px;
+                }
+
+                @include xl {
+                    width: 60%;
+                    font-size: 40px;
+                }
+
+                @include xxl {
+                    width: 50%;
+                }
+            }
+        }
+
+        .services {
+
+            @include md {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 25px;
+            }
+
+            @include lg {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            a {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+                text-align: center;
+                text-decoration: none;
+
+                @include md {
+                    text-align: left;
+                }
+
+
+                &:hover {
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+                    text-decoration: underline;
+
+                    .body img {
+                        transform: scale(1.15) rotate(5deg);
+                    }
+                }
+            }
+
+            .item {
+                background: #FFFFFF;
+                margin-bottom: 20px;
+
+                @include md {
+                    margin-bottom: 0;
+                }
+
+                &:hover {
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+                    .body img {
+                        transform: scale(1.15) rotate(5deg);
+                    }
+                }
+
+                .header {
+                    padding: 25px 30px;
+
+                    h4 {
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                        margin: 0;
+                        color: #333;
+                    }
+                }
+
+                .body {
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        transition: transform 0.5s ease;
+                    }
+                }
+
+                .footer {
+                    padding: 25px 0;
+                    padding-left: 30px;
+                    padding-right: 10px;
+
+                    p {
+                        font-size: 13px;
+
+                        @include xl {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .pagnation {
+
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 25px 0;
+
+                .change {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: #4B5264;
+                    text-decoration: none;
+                    margin: 0 30px;
+
+                    &.inactive {
+                        color: #EAEAEA;
+                        pointer-events: none;
+                        cursor: default;
+                    }
+                }
+
+                .pages {
+                    display: flex;
+                    gap: 10px;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+
+                    .number {
+
+                        a {
+                            font-size: 18px;
+                            font-weight: 600;
+                            color: #4B5264;
+                            padding: 10px 20px;
+                            border-radius: 50%;
+                            border: 1px solid transparent;
+                            transition: all 0.3s ease;
+                        }
+
+                        &.active a {
+                            border-color: #ECECEC;
+                            pointer-events: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

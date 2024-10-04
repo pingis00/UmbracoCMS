@@ -50,6 +50,72 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Border Color
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("borderColor")]
+		public virtual global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor BorderColor => this.Value<global::Umbraco.Cms.Core.PropertyEditors.ValueConverters.ColorPickerValueConverter.PickedColor>(_publishedValueFallback, "borderColor");
+
+		///<summary>
+		/// Border Position
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("borderPosition")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> BorderPosition => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "borderPosition");
+
+		///<summary>
+		/// Border-thickness
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("borderThickness")]
+		public virtual string BorderThickness => this.Value<string>(_publishedValueFallback, "borderThickness");
+
+		///<summary>
+		/// Display Border Large
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("displayBorderLarge")]
+		public virtual bool DisplayBorderLarge => this.Value<bool>(_publishedValueFallback, "displayBorderLarge");
+
+		///<summary>
+		/// Display Border Medium
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("displayBorderMedium")]
+		public virtual bool DisplayBorderMedium => this.Value<bool>(_publishedValueFallback, "displayBorderMedium");
+
+		///<summary>
+		/// Display Border Mobile
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("displayBorderMobile")]
+		public virtual bool DisplayBorderMobile => this.Value<bool>(_publishedValueFallback, "displayBorderMobile");
+
+		///<summary>
+		/// Display Border Small
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("displayBorderSmall")]
+		public virtual bool DisplayBorderSmall => this.Value<bool>(_publishedValueFallback, "displayBorderSmall");
+
+		///<summary>
+		/// Display Border XL
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("displayBorderXl")]
+		public virtual bool DisplayBorderXl => this.Value<bool>(_publishedValueFallback, "displayBorderXl");
+
+		///<summary>
+		/// Display Border XXL
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[ImplementPropertyType("displayBorderXxl")]
+		public virtual bool DisplayBorderXxl => this.Value<bool>(_publishedValueFallback, "displayBorderXxl");
+
+		///<summary>
 		/// Large Screen
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
@@ -128,6 +194,38 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("largeScreenTextAlign")]
 		public virtual string LargeScreenTextAlign => this.Value<string>(_publishedValueFallback, "largeScreenTextAlign");
+
+		///<summary>
+		/// Margin Bottom
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("marginBottom")]
+		public virtual string MarginBottom => this.Value<string>(_publishedValueFallback, "marginBottom");
+
+		///<summary>
+		/// Margin Left
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("marginLeft")]
+		public virtual string MarginLeft => this.Value<string>(_publishedValueFallback, "marginLeft");
+
+		///<summary>
+		/// Margin Right
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("marginRight")]
+		public virtual string MarginRight => this.Value<string>(_publishedValueFallback, "marginRight");
+
+		///<summary>
+		/// Margin Top
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "14.2.0+1b21caa")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("marginTop")]
+		public virtual string MarginTop => this.Value<string>(_publishedValueFallback, "marginTop");
 
 		///<summary>
 		/// Medium Screen

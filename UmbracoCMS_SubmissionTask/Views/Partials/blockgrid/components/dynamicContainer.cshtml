@@ -8,10 +8,13 @@
     var responsiveMargin = ResponsiveMarginHelper.GetResponsiveMarginClasses(Model!);
     var responsiveTextAlign = ResponsiveTextAlignHelper.GetResponsiveTextAlign(Model!);
     var widthClasses = WidthHelper.GetResponsiveWidth(Model!);
+    var borderClass = BorderHelper.GetBorderClass(Model!);
+    var borderColorClass = BorderHelper.GetBorderColorClass(Model!);
+    var borderMarginClasses = BorderHelper.GetMarginClasses(Model!);
 }
 
 
 
-<div class="container @responsivePadding @responsiveMargin @responsiveTextAlign @widthClasses">
+<div class="container @responsivePadding @responsiveMargin @responsiveTextAlign @widthClasses @borderClass @borderMarginClasses @borderColorClass">
     @await Html.GetBlockGridItemAreasHtmlAsync(Model)
 </div>

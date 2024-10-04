@@ -1,0 +1,55 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
+@{
+	var sectionTitle = Model?.Content.Value<string>("sectionTitle") ?? "";
+	var headline = Model?.Content.Value<string>("headline") ?? "";
+
+	var colorLabel = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("backgroundColor")?.Label.ToLower() ?? null;
+	var backgroundColorClass = !string.IsNullOrEmpty(colorLabel) ? $"custom-bg-{colorLabel}" : "";
+
+
+	var selection = Umbraco.Content(Guid.Parse("c8437bd4-841a-4433-8a9b-543f0dfc09a9"))
+    .ChildrenOfType("serviceItemTemplate")
+    .Where(x => x.IsVisible())
+	.Take(6);
+}
+
+<section id="our-services" class="@(string.IsNullOrEmpty(backgroundColorClass) ? "" : backgroundColorClass)">
+	@if (!string.IsNullOrEmpty(backgroundColorClass))
+    {
+        <div class="background @backgroundColorClass"></div>
+    }
+    <div class="container">
+        <div class="headline">
+            <h6>@sectionTitle</h6>
+            <h2 class="title">@headline</h2>
+        </div>
+        
+        <div class=" services">
+            @if (selection != null)
+            {
+                @foreach (var item in selection) 
+                {
+                    var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+                    var premable = item?.Value<string>("premable") ?? "";
+
+                    <a href="@item.Url()">
+                        <div class="item">
+                            <div class="header">
+                                <h4>@item.Name()</h4>
+                            </div>
+                            <div class="body">
+                                <img src="@image" alt="@item.Name" />
+                            </div>
+                            <div class="footer">
+                                <p>@premable</p>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</section>

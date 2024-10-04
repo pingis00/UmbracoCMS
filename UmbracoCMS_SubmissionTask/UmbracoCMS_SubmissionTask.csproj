@@ -24,6 +24,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\scss\sections\Home\" />
     <Folder Include="wwwroot\scss\sections\About Us\" />
+    <Folder Include="wwwroot\scss\sections\OurServices\" />
   </ItemGroup>
 
   <PropertyGroup>

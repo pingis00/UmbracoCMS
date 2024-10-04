@@ -67,3 +67,134 @@
         }
     }
 }
+
+.form-container-help {
+    width: 100%;
+    border-radius: 3px;
+
+    .form-wrapper {
+        padding: 30px 20px;
+
+
+
+
+        .form-header {
+
+            .headline {
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+        }
+
+        .text {
+            font-size: 14px;
+            margin-bottom: 25px;
+
+            @include xl {
+                width: 90%;
+            }
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+
+
+            input, select {
+                width: 100%;
+                padding: 15px 25px;
+                border: 1px solid #EBEBEB;
+                border-radius: 4px;
+
+                &::placeholder {
+                    color: #9C9EA6;
+                }
+            }
+
+            .form-input-error {
+                display: none;
+            }
+
+            .btn-submit {
+            }
+        }
+    }
+}
+
+.form-container-question {
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+
+
+    .form-wrapper {
+
+        .form-header {
+            padding: 25px;
+            padding-bottom: 15px;
+
+            .headline {
+            }
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+
+            @include md {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+            }
+
+
+            .form-input-group {
+                width: 100%;
+                margin-bottom: 20px;
+
+                @include md {
+                    grid-column: span 1;
+                    margin-bottom: 0;
+                }
+            }
+
+            .text-area {
+                width: 100%;
+
+                @include md {
+                    grid-column: span 2;
+                }
+            }
+
+            input, textarea {
+                width: 100%;
+                padding: 15px 25px;
+                border: 1px solid #EBEBEB;
+                border-radius: 5px;
+
+                &::placeholder {
+                    color: #9C9EA6;
+                }
+            }
+
+            .form-input-error {
+                display: none;
+            }
+
+            .btn-submit {
+                width: 100%;
+                color: #F2EDDC;
+                margin-top: 20px;
+
+                @include md {
+                    width: auto;
+                    justify-self: start;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
