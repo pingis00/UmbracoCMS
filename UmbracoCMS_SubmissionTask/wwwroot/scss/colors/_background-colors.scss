@@ -23,9 +23,32 @@
     color: var(--color-default);
 }
 
-.custom-bg-light {
+.custom-light {
     background-color: var(--color-light);
-    color: var(--color-default);
+}
+
+.custom-dark {
+    background-color: var(--color-dark);
+}
+
+.custom-primary {
+    background-color: var(--color-primary);
+}
+
+.custom-secondary {
+    background-color: var(--color-secondary);
+}
+
+.custom-accent {
+    background-color: var(--color-accent);
+}
+
+.custom-gray {
+    background-color: var(--color-gray);
+}
+
+.custom-light {
+    background-color: var(--color-light);
 }
 
 @each $screenSize in mobile, small, medium, large, xl, xxl {

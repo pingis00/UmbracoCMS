@@ -1,0 +1,40 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters
+@using Umbraco.Cms.Core.Models.Blocks
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var formSettings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "formContainerHowCanWeHelpSettings") ?? null;
+    var headline = formSettings?.Value<string>("headline") ?? null;
+    var headlineColor = formSettings?.Value<ColorPickerValueConverter.PickedColor>("headlineColor")?.Label.ToLower() ?? null;
+    var headlineColorClass = (!string.IsNullOrEmpty(headlineColor) && headlineColor != "none") ? $"text-color-{headlineColor}" : "";
+    
+    var text = formSettings?.Value<string>("text") ?? null;
+    var textColor = formSettings?.Value<ColorPickerValueConverter.PickedColor>("textColor")?.Label.ToLower() ?? null;
+    var textColorClass = (!string.IsNullOrEmpty(textColor) && textColor != "none") ? $"text-color-{textColor}" : "";
+
+    var backgroundColorLabel = formSettings?.Value<ColorPickerValueConverter.PickedColor>("backgroundColor")?.Label.ToLower() ?? null;
+    var backgroundColorClass = (!string.IsNullOrEmpty(backgroundColorLabel) && backgroundColorLabel != "none") ? $"custom-{backgroundColorLabel}" : "";
+}
+
+<div class="form-container-help @backgroundColorClass">
+    <div class="form-wrapper">
+        <div class="form-header">
+            <h3 class="headline @headlineColorClass">@headline</h3>
+        </div>
+
+        <p class="text @textColorClass">@text</p>
+        @using (Html.BeginUmbracoForm("HandleRequestCallBack", "FormSurface", FormMethod.Post))
+        {
+            <div class="form">
+                <div class="form-input-group">
+                    <input type="email" id="email" name="email" placeholder="Email address" class="form-input" required />
+                    <span class="form-input-error">You must enter an e-mail address</span>
+                </div>
+            </div>
+        }
+    </div>
+</div>

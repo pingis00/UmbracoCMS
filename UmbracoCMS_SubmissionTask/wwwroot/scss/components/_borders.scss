@@ -1,0 +1,51 @@
+@each $size, $breakpoint in ('mobile': null, 'small': 576px, 'medium': 768px, 'large': 992px, 'xl': 1200px, 'xxl': 1400px) {
+    @if $size == 'mobile' {
+        @each $position in (top, bottom, left, right) {
+            @each $thickness, $value in (thin: 1px, medium: 2px, thick: 4px) {
+                .border-#{$position}-#{$thickness}-#{$size} {
+                    border-#{$position}: $value solid;
+                }
+            }
+        }
+    }
+    @else {
+        @media (min-width: $breakpoint) {
+            @each $position in (top, bottom, left, right) {
+                @each $thickness, $value in (thin: 1px, medium: 2px, thick: 4px) {
+                    .border-#{$position}-#{$thickness}-#{$size} {
+                        border-#{$position}: $value solid;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.border-color-dark {
+    border-color: #171717;
+}
+
+.border-color-primary {
+    border-color: #4F5955;
+}
+
+.border-color-secondary {
+    border-color: #D9C3A9;
+}
+
+.border-color-accent {
+    border-color: #F2EDDC;
+}
+
+.border-color-gray {
+    border-color: #F7F7F7;
+}
+
+.border-color-light {
+    border-color: #FFFFFF;
+}
+
+.border-color-default {
+    border-color: #ECECEC;
+}
+

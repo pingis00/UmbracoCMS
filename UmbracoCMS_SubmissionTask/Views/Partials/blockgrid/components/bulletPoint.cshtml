@@ -1,0 +1,22 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var listItems = Model.Content.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("listItems");
+}
+
+@if (listItems != null)
+{
+    <ul class="bullet-list">
+        @foreach (var item in listItems)
+        {
+            var text = item?.Content.Value<string>("itemText");
+
+                if(!string.IsNullOrEmpty(text))
+                {
+                    <li>@text</li>
+                }
+            
+        }
+    </ul>
+}

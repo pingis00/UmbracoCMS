@@ -1,0 +1,46 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters
+@using Umbraco.Cms.Core.Models.Blocks
+@inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+
+@{
+    var rootContents = UmbracoHelper.ContentAtRoot();
+    var formSettings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "formContainerHowCanWeHelpSettings") ?? null;
+    var headline = formSettings?.Value<string>("headline") ?? null;
+    var headlineColor = formSettings?.Value<ColorPickerValueConverter.PickedColor>("headlineColor")?.Label.ToLower() ?? null;
+    var headlineColorClass = (!string.IsNullOrEmpty(headlineColor) && headlineColor != "none") ? $"text-color-{headlineColor}" : "";
+
+    var buttonColor = formSettings?.Value<ColorPickerValueConverter.PickedColor>("buttonColor")?.Label.ToLower() ?? null;   
+    var buttonColorClass = (!string.IsNullOrEmpty(buttonColor) && buttonColor != "none") ? $"custom-btn-{buttonColor}" : "btn";
+}
+
+<div class="form-container-question">
+    <div class="form-wrapper">
+        <div class="form-header">
+            <h3 class="headline @headlineColorClass">@headline</h3>
+        </div>
+
+        @using (Html.BeginUmbracoForm("HandleRequestCallBack", "FormSurface", FormMethod.Post))
+        {
+            <div class="form">
+                <div class="form-input-group">
+                    <input type="text" id="Name" name="Name" placeholder="Name" class="form-input" required />
+                    <span class="form-input-error">You must enter your name</span>
+                </div>
+                <div class="form-input-group">
+                    <input type="email" id="email" name="email" placeholder="Email address" class="form-input" required />
+                    <span class="form-input-error">You must enter an e-mail address</span>
+                </div>
+                <div class="text-area">
+                    <textarea id="question" name="question" placeholder="Question" class="form-input" rows="8" required></textarea>
+                    <span class="form-input-error">You must enter a question</span>
+                </div>
+                <button type="submit" class="@buttonColorClass btn-submit">Submit</button>
+            </div>
+
+        }
+    </div>
+
+</div>
