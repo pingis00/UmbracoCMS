@@ -12,9 +12,8 @@
 
     var projectContactSettings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "projectContactSettings") ?? null;
 
-    var sectionBackgroundColorLabel = projectContactSettings?.Value<ColorPickerValueConverter.PickedColor>("sectionBackgroundColor")?.Label.ToLower() ?? null;
-    var backgroundColorClass = (!string.IsNullOrEmpty(sectionBackgroundColorLabel) && sectionBackgroundColorLabel != "none") 
-        ? $"custom-bg-{sectionBackgroundColorLabel}" : "";
+    var colorLabel = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("backgroundColor")?.Label.ToLower() ?? null;
+	var backgroundColorClass = !string.IsNullOrEmpty(colorLabel) ? $"custom-bg-{colorLabel}" : "";
 
     var backgroundImage1 = projectContactSettings?.Value<IPublishedContent>("sectionBackgroundImage1")?.Url() ?? "";
     var backgroundImage2 = projectContactSettings?.Value<IPublishedContent>("sectionBackgroundImage2")?.Url() ?? "";
