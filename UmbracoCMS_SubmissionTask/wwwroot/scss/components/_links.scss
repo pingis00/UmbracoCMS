@@ -1,10 +1,6 @@
-﻿.a-link {
+﻿a {
     display: inline-block;
     @include text-style(400, normal, 1em);
     font-size: 1em;
-    text-decoration: underline;
-
-    &:hover {
-        text-decoration: none;
-    }
+    text-decoration: none;
 }

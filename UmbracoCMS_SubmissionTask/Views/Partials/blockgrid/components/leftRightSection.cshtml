@@ -2,10 +2,14 @@
 @using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using UmbracoCMS_SubmissionTask.Views.Helpers
 @{
+    var responsivePadding = ResponsivePaddingHelper.GetResponsivePaddingClasses(Model!);
+    var responsiveMargin = ResponsiveMarginHelper.GetResponsiveMarginClasses(Model!);
+    var responsiveTextAlign = ResponsiveTextAlignHelper.GetResponsiveTextAlign(Model!);
 }
 
-<div class="left-right-section">
+<div class="left-right-section @responsivePadding @responsiveMargin @responsiveTextAlign">
     
     @await Html.GetBlockGridItemAreasHtmlAsync(Model)
     

@@ -1,0 +1,28 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.Blocks;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Web.Common.PublishedModels.ProjectItemTemplate>
+@{
+	Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model.Name;
+
+    var blockGrid = Model.Value<BlockGridModel>("pageContent");
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Title))
+{
+    @await Html.PartialAsync("partials/static/breadcrumb.cshtml");
+}
+<section class="project-details">
+    
+    
+
+    @if (blockGrid != null && blockGrid.Count() > 0)
+    {
+        @await Html.GetBlockGridHtmlAsync(blockGrid)
+    }
+    else
+    {
+        <p>No content found in the layout.</p>
+    }
+    
+</section>
