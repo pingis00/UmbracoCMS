@@ -1,0 +1,25 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var tagItems = Model.Content.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("tagItems");
+}
+
+@if (tagItems != null)
+{
+    <div class="container">
+            <ul class="tag-list">
+        @foreach (var item in tagItems)
+        {
+            var tag = item?.Content.Value<string>("tagText");
+
+            if(!string.IsNullOrEmpty(tag))
+            {
+                <li>@tag</li>
+            }
+            
+        }
+    </ul>
+    </div>
+
+}

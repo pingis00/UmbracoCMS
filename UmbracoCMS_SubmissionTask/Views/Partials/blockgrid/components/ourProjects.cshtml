@@ -1,0 +1,54 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
+@{
+	var sectionTitle = Model?.Content.Value<string>("sectionTitle") ?? "";
+	var headline = Model?.Content.Value<string>("headline") ?? "";
+
+	var colorLabel = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("backgroundColor")?.Label.ToLower() ?? null;
+	var backgroundColorClass = !string.IsNullOrEmpty(colorLabel) ? $"custom-bg-{colorLabel}" : "";
+
+	var selection = Umbraco.Content(Guid.Parse("292487ef-9596-435b-9cf9-cc5d50cf4e7b"))
+    .ChildrenOfType("projectItemTemplate")
+    .Where(x => x.IsVisible());
+}
+<section class="our-projects @(string.IsNullOrEmpty(backgroundColorClass) ? "" : backgroundColorClass)">
+	@if (!string.IsNullOrEmpty(backgroundColorClass))
+    {
+        <div class="background @backgroundColorClass"></div>
+    }
+    <div class="container">
+        <div class="headline">
+            <h6>@sectionTitle</h6>
+            <h2 class="title">@headline</h2>
+        </div>
+	</div>  
+    <div class=" projects">
+        @if (selection != null)
+        {
+            @foreach (var item in selection) 
+            {
+                var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+
+                <a href="@item!.Url()">
+                    <div class="project-item">
+                        <div class="image-container">
+                            <img src="@image" alt="@item!.Name" />
+                        </div>                       
+                        <div class="project-info">
+                            <div>
+                                <h6>@item.Name()</h6>
+                                <p>Financial Services</p>
+                            </div>
+                            <div class="arrow">
+                                <img src="/Assets/Images/white-arrow.svg" alt="Arrow" />
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            }
+        }
+    </div>
+</section>
+

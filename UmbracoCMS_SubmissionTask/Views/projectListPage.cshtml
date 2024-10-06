@@ -1,0 +1,144 @@
+﻿@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.Blocks;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Web.Common.PublishedModels.ProjectListPage>
+@{
+	Layout = "mainLayout.cshtml";
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+	var selection = Umbraco.Content(Guid.Parse("292487ef-9596-435b-9cf9-cc5d50cf4e7b"))
+    .ChildrenOfType("projectItemTemplate")
+    .Where(x => x.IsVisible());
+
+    var itemsPerPage = 4;
+
+    if (!int.TryParse(Context.Request.Query["page"], out int currentPage))
+        currentPage = 1;
+
+    var totalItems = selection?.Count() ?? 0;
+    var pagedItems = selection?.Skip((currentPage - 1) * itemsPerPage).Take(itemsPerPage);
+
+    var blockGrid = Model!.Value<BlockGridModel>("projectContactSection");
+    var formHelp = Model!.Value<BlockGridModel>("formHelp");
+    var tagsList = Model.Value<IEnumerable<string>>("tags") ?? Enumerable.Empty<string>();
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Title))
+{
+    @await Html.PartialAsync("partials/static/breadcrumb.cshtml")
+}
+
+<section id="our-projects">
+    <div class="container">
+        <div class="left-section">
+            <div class="projects">
+                @if (pagedItems != null)
+                {
+                    @foreach (var item in pagedItems)
+                    {
+                        var image = item?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+                        var date = item?.Value<DateTime>("date").ToString("MMMM dd, yyyy");
+                        var premable =  item?.Value<string>("premable") ?? "";
+                        var linkText = item?.Value<string>("linkText") ?? "Read more";
+
+                        <a href="@item!.Url()">
+                            <div class="project-item">
+                                <div class="image">
+                                            <img src="@image" alt="@item!.Name()" />
+                                </div>
+                                <div class="text-content">
+                                    <h4>@item!.Name()</h4>
+                                    <div class="date">
+                                        <i class="fas fa-calendar-alt"></i> @date
+                                    </div>
+                                    <p>@premable</p>
+                                    <span class="read-more">@linkText <i class="fas fa-arrow-right"></i></span>
+                                </div>
+                                
+                            </div>
+                        </a>
+                    }
+                }
+                <div class="pagnation">
+                    <div class="container">
+                        @if (currentPage > 1)
+
+                        {
+                            <a href="?page=@(currentPage - 1)" class="change">Prev</a>
+                        }
+
+                        else
+
+                        {
+                            <span class="change inactive">Prev</span>
+                        }
+
+                        <ul class="pages">
+                            @for (int i = 1; i <= Math.Ceiling((decimal)totalItems / itemsPerPage); i++)
+
+                            {
+                                <li class="@((i == currentPage) ? "number active" : "number")">
+                                    <a href="?page=@i">@i</a>
+                                </li>
+                            }
+                        </ul>
+
+                        @if (currentPage < Math.Ceiling((decimal)totalItems / itemsPerPage))
+
+                        {
+                            <a class="change" href="?page=@(currentPage + 1)">Next</a>
+                        }
+
+                        else
+
+                        {
+                            <span class="change inactive">Next</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-section">
+            <aside class="tags">
+                <h3>Tags</h3>
+                @if (Model.Tags != null && Model.Tags.Any())
+
+                {
+                    <ul>
+                        @foreach (var block in Model.Tags)
+
+                        {
+                            var tagItem = block.Content as TagItem;
+                            if (tagItem != null)
+                            {
+                                <li>@tagItem.TagText</li>
+                            }
+
+                        }
+                    </ul>
+                }
+            </aside>
+            <div id="form-help-section">
+                @if (formHelp != null && formHelp.Count() > 0)
+
+                {
+                    @await Html.GetBlockGridHtmlAsync(formHelp)
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="project-contact-section">  
+    @if (blockGrid != null && blockGrid.Count() > 0)
+    {
+        @await Html.GetBlockGridHtmlAsync(blockGrid)
+    }
+    else
+    {
+        <p>No content found in the layout.</p>
+    }
+</section>
+
+

@@ -1,0 +1,267 @@
+#our-projects {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        @include xl {
+            flex-direction: row;
+        }
+
+
+        .left-section {
+
+            @include xl {
+                width: 70%;
+            }
+
+            .projects {
+
+
+                a {
+
+                    .project-item {
+                        display: flex;
+                        flex-direction: column;
+                        padding-bottom: 10px;
+                        margin-bottom: 20px;
+                        transition: all 0.3s ease;
+
+
+                        @include lg {
+                            flex-direction: row;
+                            padding-bottom: 20px;
+                            border-bottom: 1px solid #ebebeb;
+                        }
+
+                        @include xl {
+                            padding-bottom: 30px;
+                            margin-bottom: 30px;
+                        }
+
+                        &:hover {
+                            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+                            .image img {
+                                transform: scale(1.15) rotate(5deg);
+                            }
+                        }
+
+                        .image {
+                            overflow: hidden;
+
+                            @include lg {
+                                width: 50%;
+                                margin-right: 30px;
+                            }
+
+                            @include xl {
+                                width: 60%;
+                            }
+
+                            @include xxl {
+                                width: 50%;
+                            }
+
+                            img {
+                                width: 100%;
+                                height: auto;
+                                transition: transform 0.5s ease;
+                            }
+                        }
+
+                        .text-content {
+
+                            @include lg {
+                                width: 50%;
+                            }
+
+                            @include xl {
+                                width: 40%;
+                            }
+
+                            @include xxl {
+                                width: 50%;
+                            }
+
+
+                            h4 {
+                                font-size: 22px;
+                                font-weight: 600;
+                                margin-top: 10px;
+
+                                @include lg {
+                                    margin-top: 0;
+                                }
+                            }
+
+                            .date {
+                                margin-top: 5px;
+                                color: #9C9EA6;
+
+                                i {
+                                }
+                            }
+
+                            p {
+                                color: #535656;
+                                margin-top: 10px;
+                                margin-bottom: 10px;
+
+                                @include lg {
+                                    width: 80%;
+                                    margin-top: 20px;
+                                    margin-bottom: 80px;
+                                }
+
+                                @include xl {
+                                    width: 100%;
+                                    margin-top: 10px;
+                                    margin-bottom: 15px;
+                                }
+
+                                @include xxl {
+                                    width: 90%;
+                                    margin-top: 20px;
+                                    margin-bottom: 50px;
+                                }
+                            }
+
+                            .read-more {
+                                color: #4F5955;
+
+                                i {
+                                    margin-left: 5px;
+                                    color: #F2EDDC;
+                                }
+
+                                &:hover {
+                                    color: #f39c12;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .pagnation {
+
+                    .container {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 25px 0;
+
+                        .change {
+                            font-size: 18px;
+                            font-weight: 600;
+                            color: #4B5264;
+                            text-decoration: none;
+                            margin: 0 30px;
+
+                            &.inactive {
+                                color: #EAEAEA;
+                                pointer-events: none;
+                                cursor: default;
+                            }
+                        }
+
+                        .pages {
+                            display: flex;
+                            gap: 10px;
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+
+                            .number {
+
+                                a {
+                                    font-size: 18px;
+                                    font-weight: 600;
+                                    color: #4B5264;
+                                    padding: 10px 20px;
+                                    border-radius: 50%;
+                                    border: 1px solid transparent;
+                                    transition: all 0.3s ease;
+                                }
+
+                                &.active a {
+                                    border-color: #ECECEC;
+                                    pointer-events: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .right-section {
+
+            @include lg {
+                display: flex;
+                flex-direction: row;
+                padding-top: 30px;
+            }
+
+            @include xl {
+                flex-direction: column;
+                width: 30%;
+                border-left: 1px solid #ebebeb;
+                padding-left: 40px;
+                margin-left: 100px;
+            }
+
+
+
+            .tags {
+                margin-top: 15px;
+                margin-bottom: 30px;
+
+
+                @include lg {
+                    margin-top: 0;
+                    border-right: 1px solid #ebebeb;
+                    margin-right: 35px;
+                }
+
+                @include xl {
+                    margin-top: 0;
+                    border-right: none;
+                    margin-right: 0;
+                }
+
+                h3 {
+                    font-size: 22px;
+                    margin-bottom: 20px;
+                    font-weight: 600;
+                    color: #4F5955;
+                    text-align: center;
+                }
+
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 15px;
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        background-color: transparent;
+                        padding: 8px 15px;
+                        border: 1px solid #ebebeb;
+                        border-radius: 20px;
+                        font-size: 0.9rem;
+                        color: #2c3e50;
+                    }
+                }
+            }
+
+            #form-help-section {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+﻿@using Umbraco.Cms.Core.Media
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@using Umbraco.Cms.Core.Models.Blocks;
+@{
+    
+    var projects = Umbraco.Content(Guid.Parse("292487ef-9596-435b-9cf9-cc5d50cf4e7b"))
+                    .ChildrenOfType("projectItemTemplate")
+                    .Where(x => x.IsVisible())
+                    .OrderByDescending(x => x.Value<DateTime>("date"))
+                    .Take(4);
+}
+
+<section class="recent-projects">
+    <div class="container">
+        <h3>Recent Projects</h3>      
+            @foreach (var project in projects)
+            {
+                var image = project?.Value<IPublishedContent>("thumbnailImage")?.Url() ?? "";
+
+                <a class="project-link" href="@project!.Url()">                   
+                    <div class="image-container">
+                        <img class="image" src="@image" alt="@project!.Name()" />
+                    </div>
+                    <div class="text-container">
+                        <h6>@project!.Name()</h6>
+                        <p><i class="fas fa-calendar-alt"></i> @(project!.Value<DateTime>("date").ToString("MMMM dd, yyyy"))</p>
+                    </div>                   
+                </a>
+            } 
+    </div>
+</section>

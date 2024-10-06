@@ -20,7 +20,8 @@
     var textColorClass = (!string.IsNullOrEmpty(textColor) && textColor != "none") ? $"text-color-{textColor}" : "";
 }
 
-<div class="form-container-help @backgroundColorClass">
+<div class="container form-container-help @backgroundColorClass">
+    
     <div class="form-wrapper">
         <div class="form-header">
             <h3 class="headline @headlineColorClass">@headline</h3>
@@ -36,5 +37,7 @@
                 </div>
             </div>
         }
+    
     </div>
+
 </div>
