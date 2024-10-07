@@ -17096,6 +17096,15 @@ a {
 .form-container .form-wrapper .form .form-input-error {
   display: none;
 }
+.form-container .form-wrapper .form .form-invalid-input {
+  display: block;
+  color: red;
+}
+.form-container .form-wrapper .success-message {
+  color: green;
+  font-weight: 700;
+}
+
 .form-container-help {
   width: 100%;
   border-radius: 3px;
@@ -17132,6 +17141,14 @@ a {
 }
 .form-container-help .form-wrapper .form .form-input-error {
   display: none;
+}
+.form-container-help .form-wrapper .form .form-invalid-input {
+  display: block;
+  color: red;
+}
+.form-container-help .form-wrapper .success-message {
+  color: green;
+  font-weight: 700;
 }
 
 .form-container-question {
@@ -17185,6 +17202,10 @@ a {
 .form-container-question .form-wrapper .form .form-input-error {
   display: none;
 }
+.form-container-question .form-wrapper .form .form-invalid-input {
+  display: block;
+  color: red;
+}
 .form-container-question .form-wrapper .form .btn-submit {
   width: 100%;
   color: #F2EDDC;
@@ -17196,6 +17217,10 @@ a {
     justify-self: start;
     margin-top: 0;
   }
+}
+.form-container-question .form-wrapper .success-message {
+  color: green;
+  font-weight: 700;
 }
 
 .form-map-section {
@@ -17292,6 +17317,10 @@ a {
 .form-map-section .container .form-wrapper .form .form-input-error {
   display: none;
 }
+.form-map-section .container .form-wrapper .form .form-invalid-input {
+  display: block;
+  color: red;
+}
 .form-map-section .container .form-wrapper .form .btn-submit {
   margin-top: 10px;
   margin-left: auto;
@@ -17302,6 +17331,10 @@ a {
   .form-map-section .container .form-wrapper .form .btn-submit {
     grid-column: span 2;
   }
+}
+.form-map-section .container .form-wrapper .success-message {
+  color: green;
+  font-weight: 700;
 }
 
 .fullwidth-to-container {

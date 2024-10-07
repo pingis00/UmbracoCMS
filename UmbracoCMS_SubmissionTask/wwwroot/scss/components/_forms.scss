@@ -62,8 +62,18 @@
                 display: none;
             }
 
+            .form-invalid-input {
+                display: block;
+                color: red;
+            }
+
             .btn-submit {
             }
+        }
+
+        .success-message {
+            color: green;
+            font-weight: 700;
         }
     }
 }
@@ -112,6 +122,16 @@
             .form-input-error {
                 display: none;
             }
+
+            .form-invalid-input {
+                display: block;
+                color: red;
+            }
+        }
+
+        .success-message {
+            color: green;
+            font-weight: 700;
         }
     }
 }
@@ -119,7 +139,6 @@
 .form-container-question {
     width: 100%;
     margin-top: 30px;
-
 
     .form-wrapper {
 
@@ -177,6 +196,13 @@
                 display: none;
             }
 
+            .form-invalid-input {
+                display: block;
+                color: red;
+            }
+
+
+
             .btn-submit {
                 width: 100%;
                 color: #F2EDDC;
@@ -188,6 +214,11 @@
                     margin-top: 0;
                 }
             }
+        }
+
+        .success-message {
+            color: green;
+            font-weight: 700;
         }
     }
 }
@@ -301,6 +332,11 @@
                     display: none;
                 }
 
+                .form-invalid-input {
+                    display: block;
+                    color: red;
+                }
+
                 .btn-submit {
                     margin-top: 10px;
                     margin-left: auto;
@@ -311,6 +347,11 @@
                         grid-column: span 2;
                     }
                 }
+            }
+
+            .success-message {
+                color: green;
+                font-weight: 700;
             }
         }
     }

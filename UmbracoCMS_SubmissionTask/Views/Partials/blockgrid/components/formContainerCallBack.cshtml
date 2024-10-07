@@ -18,6 +18,10 @@
 
     var buttonColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("buttonColor")?.Label.ToLower() ?? null;   
     var buttonColorClass = (!string.IsNullOrEmpty(buttonColor) && buttonColor != "none") ? $"custom-btn-{buttonColor}" : "btn";
+
+    bool.TryParse(ViewData["error_name"]?.ToString()!, out bool error_name);
+    bool.TryParse(ViewData["error_email"]?.ToString()!, out bool error_email);
+    bool.TryParse(ViewData["error_phone"]?.ToString()!, out bool error_phone);
 }
 
 <div class="form-container">
@@ -27,20 +31,20 @@
         </div>
 
         <p class="text @textColorClass">@text</p>
-        @using (Html.BeginUmbracoForm("HandleRequestCallBack", "FormSurface", FormMethod.Post))
+        @using (Html.BeginUmbracoForm("HandleRequestCallBack", "FormQuestionSurface", FormMethod.Post))
         {
             <div class="form">
                 <div class="form-input-group">
-                    <input type="text" id="Name" name="Name" placeholder="Name" class="form-input" required />
-                    <span class="form-input-error">You must enter your name</span>
+                    <input type="text" id="Name" name="Name" placeholder="Name" class="form-input" value="@ViewData["name"]" />
+                    <span class="form-input-error @((error_name) ? "form-invalid-input": null)">You must enter your name</span>
                 </div>
                 <div class="form-input-group">
-                    <input type="email" id="email" name="email" placeholder="Email address" class="form-input" required />
-                    <span class="form-input-error">You must enter an e-mail address</span>
+                    <input type="email" id="email" name="email" placeholder="Email address" class="form-input" value="@ViewData["email"]" />
+                    <span class="form-input-error @((error_email) ? "form-invalid-input": null)">You must enter an e-mail address</span>
                 </div>
                 <div class="form-input-group">
-                    <input type="tel" id="phone" name="phone" placeholder="Phone" class="form-input" required />
-                    <span class="form-input-error">You must enter a phone number</span>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone" class="form-input" value="@ViewData["phone"]" />
+                    <span class="form-input-error @((error_phone) ? "form-invalid-input": null)">You must enter a phone number</span>
                 </div>
                 <select name="service">
                     <option value="financial-consulting">Financial consulting</option>
@@ -52,6 +56,12 @@
                 </select>
                 <button type="submit" class="@buttonColorClass btn-submit">Submit</button>
             </div>
+
+        }
+
+        @if (TempData["success"] != null)
+        {
+            <div class="success-message">@TempData["Success"]</div>
 
         }
     </div>
