@@ -192,3 +192,127 @@
     }
 }
 
+.map-section {
+    
+}
+
+.form-map-section {
+    width: 100%;
+    margin-bottom: 200px;
+
+    .container {
+        position: relative;
+
+        .form-wrapper {
+            position: absolute;
+            left: 50%;
+            z-index: 10;
+            background-color: #FFFFFF;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transform: translate(-50%, -70%);
+            padding: 70px;
+            width: 100%;
+
+
+            @include md {
+            }
+
+            @include lg {
+            }
+
+            @include xl {
+            }
+
+            .form-header {
+                text-align: center;
+
+
+                .section-headline {
+                    margin-bottom: 10px;
+                }
+
+                .headline {
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 25px;
+
+                    @include md {
+                        width: 70%;
+                    }
+
+                    @include lg {
+                        width: 60%;
+                    }
+
+                    @include xl {
+                        width: 50%;
+                    }
+
+                    @include xxl {
+                        width: 45%;
+                    }
+                }
+
+                .text {
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 25px;
+
+                    @include md {
+                        width: 90%;
+                    }
+
+                    @include lg {
+                        width: 60%;
+                    }
+
+                    @include xl {
+                        width: 50%;
+                    }
+
+                    @include xxl {
+                        width: 45%;
+                    }
+                }
+            }
+
+            .form {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+
+                @include md {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+
+                input, select {
+                    width: 100%;
+                    padding: 15px 15px;
+                    border: 1px solid #EBEBEB;
+
+
+                    &::placeholder {
+                        color: #9C9EA6;
+                    }
+                }
+
+                .form-input-error {
+                    display: none;
+                }
+
+                .btn-submit {
+                    margin-top: 10px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    color: white;
+
+                    @include md {
+                        grid-column: span 2;
+                    }
+                }
+            }
+        }
+    }
+}
+

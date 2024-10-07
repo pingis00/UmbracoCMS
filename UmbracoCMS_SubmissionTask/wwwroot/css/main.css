@@ -17198,6 +17198,112 @@ a {
   }
 }
 
+.form-map-section {
+  width: 100%;
+  margin-bottom: 200px;
+}
+.form-map-section .container {
+  position: relative;
+}
+.form-map-section .container .form-wrapper {
+  position: absolute;
+  left: 50%;
+  z-index: 10;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -70%);
+  padding: 70px;
+  width: 100%;
+}
+.form-map-section .container .form-wrapper .form-header {
+  text-align: center;
+}
+.form-map-section .container .form-wrapper .form-header .section-headline {
+  margin-bottom: 10px;
+}
+.form-map-section .container .form-wrapper .form-header .headline {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+@media (min-width: 768px) {
+  .form-map-section .container .form-wrapper .form-header .headline {
+    width: 70%;
+  }
+}
+@media (min-width: 992px) {
+  .form-map-section .container .form-wrapper .form-header .headline {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  .form-map-section .container .form-wrapper .form-header .headline {
+    width: 50%;
+  }
+}
+@media (min-width: 1400px) {
+  .form-map-section .container .form-wrapper .form-header .headline {
+    width: 45%;
+  }
+}
+.form-map-section .container .form-wrapper .form-header .text {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+@media (min-width: 768px) {
+  .form-map-section .container .form-wrapper .form-header .text {
+    width: 90%;
+  }
+}
+@media (min-width: 992px) {
+  .form-map-section .container .form-wrapper .form-header .text {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  .form-map-section .container .form-wrapper .form-header .text {
+    width: 50%;
+  }
+}
+@media (min-width: 1400px) {
+  .form-map-section .container .form-wrapper .form-header .text {
+    width: 45%;
+  }
+}
+.form-map-section .container .form-wrapper .form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .form-map-section .container .form-wrapper .form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.form-map-section .container .form-wrapper .form input, .form-map-section .container .form-wrapper .form select {
+  width: 100%;
+  padding: 15px 15px;
+  border: 1px solid #EBEBEB;
+}
+.form-map-section .container .form-wrapper .form input::placeholder, .form-map-section .container .form-wrapper .form select::placeholder {
+  color: #9C9EA6;
+}
+.form-map-section .container .form-wrapper .form .form-input-error {
+  display: none;
+}
+.form-map-section .container .form-wrapper .form .btn-submit {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+@media (min-width: 768px) {
+  .form-map-section .container .form-wrapper .form .btn-submit {
+    grid-column: span 2;
+  }
+}
+
 .fullwidth-to-container {
   padding-left: 15px;
   padding-right: 15px;
