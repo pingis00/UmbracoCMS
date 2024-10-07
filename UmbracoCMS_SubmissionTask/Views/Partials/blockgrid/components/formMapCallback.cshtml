@@ -1,0 +1,89 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Core.PropertyEditors.ValueConverters
+@using Umbraco.Cms.Core.Models.Blocks
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+
+@{
+    var latitude = Model?.Content.Value<double>("latitudeMap") ?? 0;
+    var longitude = Model?.Content.Value<double>("longitudeMap") ?? 0;
+
+    var formBackgroundColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("formBackgroundColor")?.Label.ToLower() ?? null;
+    var formBackgroundColorClass = (!string.IsNullOrEmpty(formBackgroundColor) && formBackgroundColor != "none") ? $"bg-text-color-{formBackgroundColor}" : "";
+
+    var sectionTitle = Model?.Content.Value<string>("sectionTitle") ?? null;
+    var sectionTitleColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("sectionTitleColor")?.Label.ToLower() ?? null;
+    var sectionTitleColorClass = (!string.IsNullOrEmpty(sectionTitleColor) && sectionTitleColor != "none") ? $"text-color-{sectionTitleColor}" : "";
+    var headline = Model?.Content.Value<string>("headline") ?? null;
+    var headlineColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("headlineColor")?.Label.ToLower() ?? null;
+    var headlineColorClass = (!string.IsNullOrEmpty(headlineColor) && headlineColor != "none") ? $"text-color-{headlineColor}" : "";
+    var text = Model?.Content.Value<string>("text") ?? null;
+    var textColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("textColor")?.Label.ToLower() ?? null;
+    var textColorClass = (!string.IsNullOrEmpty(textColor) && textColor != "none") ? $"text-color-{textColor}" : "";
+
+    var buttonColor = Model?.Content?.Value<ColorPickerValueConverter.PickedColor>("buttonColor")?.Label.ToLower() ?? null;   
+    var buttonColorClass = (!string.IsNullOrEmpty(buttonColor) && buttonColor != "none") ? $"custom-btn-{buttonColor}" : "btn";
+}
+
+<div class="map-section">
+    <div class="map-container" style="height: 750px;">
+        <div id="googleMap" style="width:100%;height:100%;"></div>
+    </div>
+
+    <div class="form-map-section @formBackgroundColorClass">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h6 class="section-headline @sectionTitleColorClass">@sectionTitle</h6>
+                    <h2 class="headline @headlineColorClass">@headline</h2>
+                    <p class="text @textColorClass">@text</p>
+                </div>
+                @using (Html.BeginUmbracoForm("HandleRequestCallBack", "FormSurface", FormMethod.Post))
+                {
+                    <div class="form">
+                        <div class="form-input-group">
+                            <input type="text" id="Name" name="Name" placeholder="Name" class="form-input" required />
+                            <span class="form-input-error">You must enter your name</span>
+                        </div>
+                        <div class="form-input-group">
+                            <input type="email" id="email" name="email" placeholder="Email address" class="form-input" required />
+                            <span class="form-input-error">You must enter an e-mail address</span>
+                        </div>
+                        <div class="form-input-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Phone" class="form-input" required />
+                            <span class="form-input-error">You must enter a phone number</span>
+                        </div>
+                        <select name="service">
+                            <option value="financial-consulting">Financial consulting</option>
+                            <option value="risk-management">Risk Management</option>
+                            <option value="bonds-commodities">Bonds & Commodities</option>
+                            <option value="statistic-advisor">Statistic Advisor</option>
+                            <option value="tax-trusts">Tax and Trusts</option>
+                            <option value="assurance-audits">Assurance & Audits</option>
+                        </select>
+                        <button type="submit" class="@buttonColorClass btn btn-submit">Submit</button>
+
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function initMap() {
+        console.log("Init map function triggered");
+        var location = { lat: @latitude, lng: @longitude };
+        var map = new google.maps.Map(document.getElementById('googleMap'), {
+            zoom: 15,
+            center: location
+        });
+        const markerView = new google.maps.marker.AdvancedMarkerElement({
+            position: location,
+            map: map,
+            title: "Your location"
+        });
+    }
+</script>
