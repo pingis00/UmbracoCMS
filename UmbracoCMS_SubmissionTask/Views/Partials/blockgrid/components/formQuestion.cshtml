@@ -1,19 +1,25 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
 @inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
 @using Umbraco.Cms.Core.PropertyEditors.ValueConverters
 
 @{
     var rootContents = UmbracoHelper.ContentAtRoot();
     var formSettings = rootContents?.FirstOrDefault(x => x.ContentType.Alias == "formQuestionSettings") ?? null;
-    
+
     var headline = formSettings?.Value<string>("headline") ?? "Default Headline";
     var headlineColor = formSettings?.Value<ColorPickerValueConverter.PickedColor>("headlineColor")?.Label.ToLower() ?? "";
     var buttonColor = formSettings?.Value<ColorPickerValueConverter.PickedColor>("buttonColor")?.Label.ToLower() ?? "";
     var buttonText = formSettings?.Value<string>("buttonLinkText") ?? "Submit";
-    
+
     var headlineColorClass = (!string.IsNullOrEmpty(headlineColor) && headlineColor != "none") ? $"text-color-{headlineColor}" : "";
     var buttonColorClass = (!string.IsNullOrEmpty(buttonColor) && buttonColor != "none") ? $"custom-btn-{buttonColor}" : "";
+
+    bool.TryParse(ViewData["error_name"]?.ToString()!, out bool error_name);
+    bool.TryParse(ViewData["error_email"]?.ToString()!, out bool error_email);
+    bool.TryParse(ViewData["error_question"]?.ToString()!, out bool error_question);
+
 }
 
 <div class="form-container-question">
@@ -22,23 +28,31 @@
             <h3 class="headline @headlineColorClass">@headline</h3>
         </div>
 
-        @using (Html.BeginUmbracoForm("HandleRequestCallBack", "FormSurface", FormMethod.Post))
-        {
-            <div class="form">
-                <div class="form-input-group">
-                    <input type="text" id="Name" name="Name" placeholder="Name" class="form-input" required />
-                    <span class="form-input-error">You must enter your name</span>
+        
+            @using (Html.BeginUmbracoForm("HandleRequestQuestion", "FormQuestionSurface", FormMethod.Post))
+            {
+                <div class="form">
+                    <div class="form-input-group">
+                        <input type="text" id="Name" name="Name" placeholder="Name" class="form-input" value="@ViewData["name"]" />
+                        <span class="form-input-error @((error_name) ? "form-invalid-input": null)">You must enter your name</span>
+                    </div>
+                    <div class="form-input-group">
+                        <input type="email" id="email" name="email" placeholder="Email address" class="form-input" value="@ViewData["email"]" />
+                        <span class="form-input-error @((error_email) ? "form-invalid-input": null)">You must enter an e-mail address</span>
+                    </div>
+                    <div class="text-area">
+                        <textarea id="question" name="question" placeholder="Question" class="form-input" value="@ViewData["question"]" rows="8"></textarea>
+                        <span class="form-input-error @((error_question) ? "form-invalid-input": null)">You must enter a question</span>
+                    </div>
+                    <button type="submit" class="btn-submit @buttonColorClass">@buttonText</button>
                 </div>
-                <div class="form-input-group">
-                    <input type="email" id="email" name="email" placeholder="Email address" class="form-input" required />
-                    <span class="form-input-error">You must enter an e-mail address</span>
-                </div>
-                <div class="text-area">
-                    <textarea id="question" name="question" placeholder="Question" class="form-input" rows="8" required></textarea>
-                    <span class="form-input-error">You must enter a question</span>
-                </div>
-                <button type="submit" class="btn-submit @buttonColorClass">@buttonText</button>
-            </div>
-        }
+            }
+            @if (TempData["success"] != null)
+            {
+                <div class="success-message">@TempData["Success"]</div>
+
+            }
+
+
     </div>
 </div>

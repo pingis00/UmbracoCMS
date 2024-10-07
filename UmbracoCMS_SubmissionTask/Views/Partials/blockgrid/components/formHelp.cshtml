@@ -1,4 +1,5 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
 @inject Umbraco.Cms.Web.Common.UmbracoHelper UmbracoHelper
 @using Umbraco.Cms.Core.PropertyEditors.ValueConverters;
@@ -18,6 +19,8 @@
 
     var textColor = formSettings?.Value<ColorPickerValueConverter.PickedColor>("textColor")?.Label.ToLower() ?? "";
     var textColorClass = (!string.IsNullOrEmpty(textColor) && textColor != "none") ? $"text-color-{textColor}" : "";
+
+    bool.TryParse(ViewData["error_email"]?.ToString()!, out bool error_email);
 }
 
 <div class="container form-container-help @backgroundColorClass">
@@ -28,16 +31,31 @@
         </div>
         <p class="text @textColorClass">@text</p>
 
-        @using (Html.BeginUmbracoForm("HandleRequestCallBack", "FormSurface", FormMethod.Post))
+        @using (Html.BeginUmbracoForm("HandleRequestHelp", "FormQuestionSurface", FormMethod.Post))
         {
             <div class="form">
                 <div class="form-input-group">
-                    <input type="email" id="email" name="email" placeholder="Email address" class="form-input" required />
-                    <span class="form-input-error">You must enter an e-mail address</span>
+                    <input type="email" id="email-help" name="email" placeholder="Email address" class="form-input" value="@ViewData["email"]"/>
+                    <span class="form-input-error @((error_email) ? "form-invalid-input": null)">You must enter an e-mail address</span>
                 </div>
             </div>
+        }
+
+        @if (TempData["success"] != null)
+        {
+            <div class="success-message" id="success-message">@TempData["Success"]</div>
+
         }
     
     </div>
 
 </div>
+
+<script>
+    document.getElementById("email-help").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("email").submit();.
+        }
+    });
+</script>
