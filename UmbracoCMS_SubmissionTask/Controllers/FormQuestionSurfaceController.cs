@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Net;
-using System.Net.Mail;
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Logging;
 using Umbraco.Cms.Core.Routing;
@@ -9,13 +7,14 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Website.Controllers;
 using UmbracoCMS_SubmissionTask.Models;
+using UmbracoCMS_SubmissionTask.Services;
 
 namespace UmbracoCMS_SubmissionTask.Controllers
 {
     public class FormQuestionSurfaceController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider) : SurfaceController(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
     {
         [HttpPost]
-        public IActionResult HandleRequestQuestion(FormQuestionModel form)
+        public async Task<IActionResult> HandleRequestQuestion(FormQuestionModel form)
         {
             if (!ModelState.IsValid)
             {
@@ -41,14 +40,17 @@ namespace UmbracoCMS_SubmissionTask.Controllers
             contentService.Save(question);
             contentService.Publish(question, []);
 
-            SendconfirmationEmail(form.Email, form.Name);
+            string subject = "New Question Submitted";
+            string body = $"Hi {form.Name},\n\nThank you for your question: {form.Question}.\n\nWe will get back to you soon!";
+
+            await MailgunService.SendEmailAsync(form.Email, subject, body);
 
             TempData["success"] = "form submitted successfully.";
             return RedirectToCurrentUmbracoPage();
         }
 
         [HttpPost]
-        public IActionResult HandleRequestCallBack(FormCallbackModel form)
+        public async Task<IActionResult> HandleRequestCallBack(FormCallbackModel form)
         {
             if (!ModelState.IsValid)
             {
@@ -76,14 +78,17 @@ namespace UmbracoCMS_SubmissionTask.Controllers
             contentService.Save(question);
             contentService.Publish(question, []);
 
-            SendconfirmationEmail(form.Email, form.Name);
+            string subject = "Your Callback Request has been received";
+            string body = $"Hi {form.Name},\n\nWe have received your request for a callback regarding {form.Service}. We will contact you as soon as possible.\n\nBest regards,\nCompany Name";
+
+            await MailgunService.SendEmailAsync(form.Email, subject, body);
 
             TempData["success"] = "form submitted successfully.";
             return RedirectToCurrentUmbracoPage();
         }
 
         [HttpPost]
-        public IActionResult HandleRequestHelp(FormHelpModel form)
+        public async Task<IActionResult> HandleRequestHelp(FormHelpModel form)
         {
             if (!ModelState.IsValid)
             {
@@ -104,36 +109,13 @@ namespace UmbracoCMS_SubmissionTask.Controllers
             contentService.Save(question);
             contentService.Publish(question, []);
 
+            string subject = "Help Request Submitted";
+            string body = $"Hi,\n\nYou have submitted a help request with the following details: \n\nEmail: {form.Email}";
+
+            await MailgunService.SendEmailAsync(form.Email, subject, body);
+
             TempData["success"] = "form submitted successfully.";
             return RedirectToCurrentUmbracoPage();
-        }
-
-
-        private void SendconfirmationEmail(string toEmail, string name)
-        {
-            var fromAddress = "testingUmbracoCms@gmail.com";
-            var fromPassword = "UmbracoCms11!";
-
-            var mailMessage = new MailMessage();
-            mailMessage.From = new MailAddress(fromAddress);
-            mailMessage.To.Add(toEmail);
-            mailMessage.Subject = "Confirmation";
-            mailMessage.Body = $"Hi {name}, Thank you for your question! We will awnser as soon as possible";
-
-            using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
-            {
-                smtpClient.Credentials = new NetworkCredential(fromAddress, fromPassword);
-                smtpClient.EnableSsl = true;
-
-                try
-                {
-                    smtpClient.Send(mailMessage);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Failed to send email: " + ex.Message);
-                }
-            }
         }
     }
 }
